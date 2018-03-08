@@ -1,0 +1,94 @@
+2018-03-08T02:40:59.926950430 0.145838s notice: Recursively removing directory /anis/gasbot/rethinkdb_data/tmp
+2018-03-08T02:40:59.988266768 0.207154s notice: Initializing directory /anis/gasbot/rethinkdb_data
+2018-03-08T02:40:59.988310970 0.207198s info: Creating a default database for your convenience. (This is because you ran 'rethinkdb' without 'create', 'serve', or '--join', and the directory '/anis/gasbot/rethinkdb_data' did not already exist or is empty.)
+2018-03-08T02:40:59.988326571 0.207213s notice: Running rethinkdb 2.3.6 (GCC 7.2.1)...
+2018-03-08T02:40:59.991737657 0.210626s notice: Running on Linux 4.15.3-2-ARCH x86_64
+2018-03-08T02:40:59.991763158 0.210650s notice: Loading data from directory /anis/gasbot/rethinkdb_data
+2018-03-08T02:41:00.724498429 0.943386s info: Automatically using cache size of 5546 MB
+2018-03-08T02:41:00.724784522 0.943671s notice: Listening for intracluster connections on port 29015
+2018-03-08T02:41:00.725260315 0.944147s notice: Listening for client driver connections on port 28015
+2018-03-08T02:41:00.725330129 0.944217s notice: Listening for administrative HTTP connections on port 8080
+2018-03-08T02:41:00.725330677 0.944217s notice: Listening on cluster addresses: 127.0.0.1, ::1
+2018-03-08T02:41:00.725332286 0.944219s notice: Listening on driver addresses: 127.0.0.1, ::1
+2018-03-08T02:41:00.725334273 0.944221s notice: Listening on http addresses: 127.0.0.1, ::1
+2018-03-08T02:41:00.725337257 0.944224s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2018-03-08T02:41:00.725340478 0.944227s notice: Server ready, "dotone_vg4" 811a0a60-e033-4531-8c26-dc3a3cd74164
+2018-03-08T02:41:03.093887094 3.312774s notice: Server got SIGINT from pid 0, uid 0; shutting down...
+2018-03-08T02:41:03.094080849 3.312968s notice: Shutting down client connections...
+2018-03-08T02:41:03.094149324 3.313036s notice: All client connections closed.
+2018-03-08T02:41:03.094153084 3.313040s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2018-03-08T02:41:03.094487038 3.313374s notice: Storage engine shut down.
+2018-03-08T02:41:04.755560493 0.053487s notice: Running rethinkdb 2.3.6 (GCC 7.2.1)...
+2018-03-08T02:41:04.758422147 0.056350s notice: Running on Linux 4.15.3-2-ARCH x86_64
+2018-03-08T02:41:04.758451581 0.056378s notice: Loading data from directory /anis/gasbot/rethinkdb_data
+2018-03-08T02:41:04.855317479 0.153244s info: Automatically using cache size of 5515 MB
+2018-03-08T02:41:04.855643750 0.153570s notice: Listening for intracluster connections on port 29015
+2018-03-08T02:41:04.856546346 0.154473s notice: Listening for client driver connections on port 28015
+2018-03-08T02:41:04.856625864 0.154552s notice: Listening for administrative HTTP connections on port 8080
+2018-03-08T02:41:04.856626290 0.154553s notice: Listening on cluster addresses: 127.0.0.1, ::1
+2018-03-08T02:41:04.856627564 0.154554s notice: Listening on driver addresses: 127.0.0.1, ::1
+2018-03-08T02:41:04.856629015 0.154555s notice: Listening on http addresses: 127.0.0.1, ::1
+2018-03-08T02:41:04.856631364 0.154558s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2018-03-08T02:41:04.856633549 0.154560s notice: Server ready, "dotone_vg4" 811a0a60-e033-4531-8c26-dc3a3cd74164
+2018-03-08T02:41:30.696675313 25.994602s notice: Server got SIGINT from pid 0, uid 0; shutting down...
+2018-03-08T02:41:30.696778632 25.994705s notice: Shutting down client connections...
+2018-03-08T02:41:30.697250156 25.995177s notice: All client connections closed.
+2018-03-08T02:41:30.697257892 25.995184s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2018-03-08T02:41:30.697517153 25.995444s notice: Storage engine shut down.
+2018-03-08T02:41:40.438286805 0.048207s notice: Running rethinkdb 2.3.6 (GCC 7.2.1)...
+2018-03-08T02:41:40.441455039 0.051377s notice: Running on Linux 4.15.3-2-ARCH x86_64
+2018-03-08T02:41:40.441493611 0.051414s notice: Loading data from directory /anis/gasbot/rethinkdb_data
+2018-03-08T02:41:40.516615327 0.126536s info: Automatically using cache size of 5500 MB
+2018-03-08T02:41:40.517067139 0.126987s notice: Listening for intracluster connections on port 29015
+2018-03-08T02:41:40.517772279 0.127693s notice: Listening for client driver connections on port 28015
+2018-03-08T02:41:40.517843107 0.127763s notice: Listening for administrative HTTP connections on port 8080
+2018-03-08T02:41:40.517843578 0.127764s notice: Listening on cluster addresses: 127.0.0.1, ::1
+2018-03-08T02:41:40.517844777 0.127765s notice: Listening on driver addresses: 127.0.0.1, ::1
+2018-03-08T02:41:40.517846633 0.127767s notice: Listening on http addresses: 127.0.0.1, ::1
+2018-03-08T02:41:40.517849137 0.127769s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2018-03-08T02:41:40.517851407 0.127772s notice: Server ready, "dotone_vg4" 811a0a60-e033-4531-8c26-dc3a3cd74164
+2018-03-08T02:48:36.699174261 416.309095s notice: Server got SIGINT from pid 0, uid 0; shutting down...
+2018-03-08T02:48:36.699355621 416.309276s notice: Shutting down client connections...
+2018-03-08T02:48:36.699430911 416.309351s notice: All client connections closed.
+2018-03-08T02:48:36.699435445 416.309356s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2018-03-08T02:48:36.699931489 416.309852s notice: Storage engine shut down.
+2018-03-08T02:50:29.292084916 0.045761s notice: Running rethinkdb 2.3.6 (GCC 7.2.1)...
+2018-03-08T02:50:29.294863726 0.048542s notice: Running on Linux 4.15.3-2-ARCH x86_64
+2018-03-08T02:50:29.294896610 0.048573s notice: Loading data from directory /anis/gasbot/rethinkdb_data
+2018-03-08T02:50:29.392637786 0.146314s info: Automatically using cache size of 5502 MB
+2018-03-08T02:50:29.392935885 0.146612s notice: Listening for intracluster connections on port 29015
+2018-03-08T02:50:29.393637552 0.147314s notice: Listening for client driver connections on port 28015
+2018-03-08T02:50:29.393713122 0.147389s notice: Listening for administrative HTTP connections on port 8080
+2018-03-08T02:50:29.393713564 0.147390s notice: Listening on cluster addresses: 127.0.0.1, ::1
+2018-03-08T02:50:29.393714690 0.147391s notice: Listening on driver addresses: 127.0.0.1, ::1
+2018-03-08T02:50:29.393716033 0.147392s notice: Listening on http addresses: 127.0.0.1, ::1
+2018-03-08T02:50:29.393718411 0.147395s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2018-03-08T02:50:29.393720430 0.147397s notice: Server ready, "dotone_vg4" 811a0a60-e033-4531-8c26-dc3a3cd74164
+2018-03-08T02:53:49.810015369 200.563692s notice: Server got SIGINT from pid 0, uid 0; shutting down...
+2018-03-08T02:53:49.810132398 200.563809s notice: Shutting down client connections...
+2018-03-08T02:53:49.810932610 200.564609s notice: All client connections closed.
+2018-03-08T02:53:49.810939797 200.564616s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2018-03-08T02:53:49.811194011 200.564871s notice: Storage engine shut down.
+2018-03-08T02:53:52.427921827 0.085339s notice: Running rethinkdb 2.3.6 (GCC 7.2.1)...
+2018-03-08T02:53:52.434401626 0.091820s notice: Running on Linux 4.15.3-2-ARCH x86_64
+2018-03-08T02:53:52.434438435 0.091856s notice: Loading data from directory /anis/gasbot/rethinkdb_data
+2018-03-08T02:53:52.649160920 0.306578s info: Automatically using cache size of 5488 MB
+2018-03-08T02:53:52.649434997 0.306852s notice: Listening for intracluster connections on port 29015
+2018-03-08T02:53:52.649856882 0.307274s notice: Listening for client driver connections on port 28015
+2018-03-08T02:53:52.649928047 0.307345s notice: Listening for administrative HTTP connections on port 8080
+2018-03-08T02:53:52.649928442 0.307345s notice: Listening on cluster addresses: 127.0.0.1, ::1
+2018-03-08T02:53:52.649929589 0.307347s notice: Listening on driver addresses: 127.0.0.1, ::1
+2018-03-08T02:53:52.649930966 0.307348s notice: Listening on http addresses: 127.0.0.1, ::1
+2018-03-08T02:53:52.649932961 0.307350s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2018-03-08T02:53:52.649934913 0.307352s notice: Server ready, "dotone_vg4" 811a0a60-e033-4531-8c26-dc3a3cd74164
+2018-03-08T02:55:12.134987010 79.792405s info: Table f52024ae-db74-47a5-8086-2e79f64a18e3: Starting a new Raft election for term 1.
+2018-03-08T02:55:12.135365418 79.792783s info: Table f52024ae-db74-47a5-8086-2e79f64a18e3: Added replica on this server.
+2018-03-08T02:55:12.275531501 79.932949s info: Table f52024ae-db74-47a5-8086-2e79f64a18e3: This server is Raft leader for term 1. Latest log index is 0.
+2018-03-08T02:55:15.183895318 82.841313s info: Table fade7562-4f81-44e9-b623-5a6069fd8392: Added replica on this server.
+2018-03-08T02:55:15.183939733 82.841357s info: Table fade7562-4f81-44e9-b623-5a6069fd8392: Starting a new Raft election for term 1.
+2018-03-08T02:55:15.335974008 82.993391s info: Table fade7562-4f81-44e9-b623-5a6069fd8392: This server is Raft leader for term 1. Latest log index is 0.
+2018-03-08T03:51:42.251481139 3469.908899s notice: Server got SIGINT from pid 0, uid 0; shutting down...
+2018-03-08T03:51:42.251806317 3469.909224s notice: Shutting down client connections...
+2018-03-08T03:51:42.252093914 3469.909511s notice: All client connections closed.
+2018-03-08T03:51:42.252110317 3469.909528s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2018-03-08T03:51:42.256071560 3469.913489s notice: Storage engine shut down.
