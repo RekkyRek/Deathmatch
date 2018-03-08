@@ -92,3 +92,19 @@
 2018-03-08T03:51:42.252093914 3469.909511s notice: All client connections closed.
 2018-03-08T03:51:42.252110317 3469.909528s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
 2018-03-08T03:51:42.256071560 3469.913489s notice: Storage engine shut down.
+2018-03-08T17:29:46.206197288 0.119818s notice: Running rethinkdb 2.3.6 (GCC 7.2.1)...
+2018-03-08T17:29:46.218871622 0.132493s notice: Running on Linux 4.15.3-2-ARCH x86_64
+2018-03-08T17:29:46.218907711 0.132528s notice: Loading data from directory /anis/gasbot/rethinkdb_data
+2018-03-08T17:29:46.469415804 0.383036s info: Automatically using cache size of 6482 MB
+2018-03-08T17:29:46.472742928 0.386363s notice: Listening for intracluster connections on port 29015
+2018-03-08T17:29:46.624095359 0.537716s notice: Listening for client driver connections on port 28015
+2018-03-08T17:29:46.624192245 0.537812s notice: Listening for administrative HTTP connections on port 8080
+2018-03-08T17:29:46.624193422 0.537814s notice: Listening on cluster addresses: 127.0.0.1, ::1
+2018-03-08T17:29:46.624194341 0.537814s notice: Listening on driver addresses: 127.0.0.1, ::1
+2018-03-08T17:29:46.624195175 0.537815s notice: Listening on http addresses: 127.0.0.1, ::1
+2018-03-08T17:29:46.624196076 0.537816s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2018-03-08T17:29:46.624201239 0.537821s notice: Server ready, "dotone_vg4" 811a0a60-e033-4531-8c26-dc3a3cd74164
+2018-03-08T17:29:47.648949833 1.562570s info: Table f52024ae-db74-47a5-8086-2e79f64a18e3: Starting a new Raft election for term 2.
+2018-03-08T17:29:47.662701582 1.576322s info: Table fade7562-4f81-44e9-b623-5a6069fd8392: Starting a new Raft election for term 2.
+2018-03-08T17:29:47.900417334 1.814038s info: Table f52024ae-db74-47a5-8086-2e79f64a18e3: This server is Raft leader for term 2. Latest log index is 3.
+2018-03-08T17:29:48.040962671 1.954583s info: Table fade7562-4f81-44e9-b623-5a6069fd8392: This server is Raft leader for term 2. Latest log index is 3.

@@ -4,6 +4,8 @@ const setDefaultRole = (message) => {
   let roleName = message.content.split('!setDefaultRole ')[1]
   let role = message.guild.roles.find('name', roleName)
 
+  if (!role) { role = message.guild.roles.get(roleName) }
+
   if (role) {
     BOT.database.setServerData(message.guild.id, 'defaultRole', role.id)
     BOT.send(message.channel, {
@@ -14,7 +16,7 @@ const setDefaultRole = (message) => {
   } else {
     BOT.send(message.channel, {
       title: 'Usage Error',
-      description: `I couldn't find the role **${roleName}**. You can try entering the ID manually if you know that's the correct name.`,
+      description: `I couldn't find the role **${roleName}**.`,
       color: BOT.colors.red
     })
   }
@@ -25,7 +27,7 @@ const assignDefaultRole = async (user) => {
   let serverData = await BOT.database.getServerData(user.guild.id, 'defaultRole')
   if (!serverData && !serverData.defaultRole) { return }
 
-  const role = user.guild.id.roles.get(serverData.defaultRole)
+  const role = user.guild.roles.get(serverData.defaultRole)
   if (role) {
     user.addRole(role).catch(console.error)
   }
