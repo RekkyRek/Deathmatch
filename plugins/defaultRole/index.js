@@ -1,6 +1,6 @@
 let BOT
 
-const setDefaultRole = (message) => {
+const setDefaultRole = async (message) => {
   let roleName = message.content.split('!setDefaultRole ')[1]
   let role = message.guild.roles.find('name', roleName)
 

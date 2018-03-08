@@ -1,3 +1,4 @@
 [
-  { "name": "defaultRole", "entry": "index.js", "enabled": true }
+  { "name": "defaultRole", "entry": "index.js", "enabled": true },
+  { "name": "defineRole", "entry": "index.js", "enabled": true }
 ]
