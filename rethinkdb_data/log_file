@@ -1,110 +1,197 @@
-2018-03-08T02:40:59.926950430 0.145838s notice: Recursively removing directory /anis/gasbot/rethinkdb_data/tmp
-2018-03-08T02:40:59.988266768 0.207154s notice: Initializing directory /anis/gasbot/rethinkdb_data
-2018-03-08T02:40:59.988310970 0.207198s info: Creating a default database for your convenience. (This is because you ran 'rethinkdb' without 'create', 'serve', or '--join', and the directory '/anis/gasbot/rethinkdb_data' did not already exist or is empty.)
-2018-03-08T02:40:59.988326571 0.207213s notice: Running rethinkdb 2.3.6 (GCC 7.2.1)...
-2018-03-08T02:40:59.991737657 0.210626s notice: Running on Linux 4.15.3-2-ARCH x86_64
-2018-03-08T02:40:59.991763158 0.210650s notice: Loading data from directory /anis/gasbot/rethinkdb_data
-2018-03-08T02:41:00.724498429 0.943386s info: Automatically using cache size of 5546 MB
-2018-03-08T02:41:00.724784522 0.943671s notice: Listening for intracluster connections on port 29015
-2018-03-08T02:41:00.725260315 0.944147s notice: Listening for client driver connections on port 28015
-2018-03-08T02:41:00.725330129 0.944217s notice: Listening for administrative HTTP connections on port 8080
-2018-03-08T02:41:00.725330677 0.944217s notice: Listening on cluster addresses: 127.0.0.1, ::1
-2018-03-08T02:41:00.725332286 0.944219s notice: Listening on driver addresses: 127.0.0.1, ::1
-2018-03-08T02:41:00.725334273 0.944221s notice: Listening on http addresses: 127.0.0.1, ::1
-2018-03-08T02:41:00.725337257 0.944224s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
-2018-03-08T02:41:00.725340478 0.944227s notice: Server ready, "dotone_vg4" 811a0a60-e033-4531-8c26-dc3a3cd74164
-2018-03-08T02:41:03.093887094 3.312774s notice: Server got SIGINT from pid 0, uid 0; shutting down...
-2018-03-08T02:41:03.094080849 3.312968s notice: Shutting down client connections...
-2018-03-08T02:41:03.094149324 3.313036s notice: All client connections closed.
-2018-03-08T02:41:03.094153084 3.313040s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
-2018-03-08T02:41:03.094487038 3.313374s notice: Storage engine shut down.
-2018-03-08T02:41:04.755560493 0.053487s notice: Running rethinkdb 2.3.6 (GCC 7.2.1)...
-2018-03-08T02:41:04.758422147 0.056350s notice: Running on Linux 4.15.3-2-ARCH x86_64
-2018-03-08T02:41:04.758451581 0.056378s notice: Loading data from directory /anis/gasbot/rethinkdb_data
-2018-03-08T02:41:04.855317479 0.153244s info: Automatically using cache size of 5515 MB
-2018-03-08T02:41:04.855643750 0.153570s notice: Listening for intracluster connections on port 29015
-2018-03-08T02:41:04.856546346 0.154473s notice: Listening for client driver connections on port 28015
-2018-03-08T02:41:04.856625864 0.154552s notice: Listening for administrative HTTP connections on port 8080
-2018-03-08T02:41:04.856626290 0.154553s notice: Listening on cluster addresses: 127.0.0.1, ::1
-2018-03-08T02:41:04.856627564 0.154554s notice: Listening on driver addresses: 127.0.0.1, ::1
-2018-03-08T02:41:04.856629015 0.154555s notice: Listening on http addresses: 127.0.0.1, ::1
-2018-03-08T02:41:04.856631364 0.154558s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
-2018-03-08T02:41:04.856633549 0.154560s notice: Server ready, "dotone_vg4" 811a0a60-e033-4531-8c26-dc3a3cd74164
-2018-03-08T02:41:30.696675313 25.994602s notice: Server got SIGINT from pid 0, uid 0; shutting down...
-2018-03-08T02:41:30.696778632 25.994705s notice: Shutting down client connections...
-2018-03-08T02:41:30.697250156 25.995177s notice: All client connections closed.
-2018-03-08T02:41:30.697257892 25.995184s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
-2018-03-08T02:41:30.697517153 25.995444s notice: Storage engine shut down.
-2018-03-08T02:41:40.438286805 0.048207s notice: Running rethinkdb 2.3.6 (GCC 7.2.1)...
-2018-03-08T02:41:40.441455039 0.051377s notice: Running on Linux 4.15.3-2-ARCH x86_64
-2018-03-08T02:41:40.441493611 0.051414s notice: Loading data from directory /anis/gasbot/rethinkdb_data
-2018-03-08T02:41:40.516615327 0.126536s info: Automatically using cache size of 5500 MB
-2018-03-08T02:41:40.517067139 0.126987s notice: Listening for intracluster connections on port 29015
-2018-03-08T02:41:40.517772279 0.127693s notice: Listening for client driver connections on port 28015
-2018-03-08T02:41:40.517843107 0.127763s notice: Listening for administrative HTTP connections on port 8080
-2018-03-08T02:41:40.517843578 0.127764s notice: Listening on cluster addresses: 127.0.0.1, ::1
-2018-03-08T02:41:40.517844777 0.127765s notice: Listening on driver addresses: 127.0.0.1, ::1
-2018-03-08T02:41:40.517846633 0.127767s notice: Listening on http addresses: 127.0.0.1, ::1
-2018-03-08T02:41:40.517849137 0.127769s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
-2018-03-08T02:41:40.517851407 0.127772s notice: Server ready, "dotone_vg4" 811a0a60-e033-4531-8c26-dc3a3cd74164
-2018-03-08T02:48:36.699174261 416.309095s notice: Server got SIGINT from pid 0, uid 0; shutting down...
-2018-03-08T02:48:36.699355621 416.309276s notice: Shutting down client connections...
-2018-03-08T02:48:36.699430911 416.309351s notice: All client connections closed.
-2018-03-08T02:48:36.699435445 416.309356s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
-2018-03-08T02:48:36.699931489 416.309852s notice: Storage engine shut down.
-2018-03-08T02:50:29.292084916 0.045761s notice: Running rethinkdb 2.3.6 (GCC 7.2.1)...
-2018-03-08T02:50:29.294863726 0.048542s notice: Running on Linux 4.15.3-2-ARCH x86_64
-2018-03-08T02:50:29.294896610 0.048573s notice: Loading data from directory /anis/gasbot/rethinkdb_data
-2018-03-08T02:50:29.392637786 0.146314s info: Automatically using cache size of 5502 MB
-2018-03-08T02:50:29.392935885 0.146612s notice: Listening for intracluster connections on port 29015
-2018-03-08T02:50:29.393637552 0.147314s notice: Listening for client driver connections on port 28015
-2018-03-08T02:50:29.393713122 0.147389s notice: Listening for administrative HTTP connections on port 8080
-2018-03-08T02:50:29.393713564 0.147390s notice: Listening on cluster addresses: 127.0.0.1, ::1
-2018-03-08T02:50:29.393714690 0.147391s notice: Listening on driver addresses: 127.0.0.1, ::1
-2018-03-08T02:50:29.393716033 0.147392s notice: Listening on http addresses: 127.0.0.1, ::1
-2018-03-08T02:50:29.393718411 0.147395s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
-2018-03-08T02:50:29.393720430 0.147397s notice: Server ready, "dotone_vg4" 811a0a60-e033-4531-8c26-dc3a3cd74164
-2018-03-08T02:53:49.810015369 200.563692s notice: Server got SIGINT from pid 0, uid 0; shutting down...
-2018-03-08T02:53:49.810132398 200.563809s notice: Shutting down client connections...
-2018-03-08T02:53:49.810932610 200.564609s notice: All client connections closed.
-2018-03-08T02:53:49.810939797 200.564616s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
-2018-03-08T02:53:49.811194011 200.564871s notice: Storage engine shut down.
-2018-03-08T02:53:52.427921827 0.085339s notice: Running rethinkdb 2.3.6 (GCC 7.2.1)...
-2018-03-08T02:53:52.434401626 0.091820s notice: Running on Linux 4.15.3-2-ARCH x86_64
-2018-03-08T02:53:52.434438435 0.091856s notice: Loading data from directory /anis/gasbot/rethinkdb_data
-2018-03-08T02:53:52.649160920 0.306578s info: Automatically using cache size of 5488 MB
-2018-03-08T02:53:52.649434997 0.306852s notice: Listening for intracluster connections on port 29015
-2018-03-08T02:53:52.649856882 0.307274s notice: Listening for client driver connections on port 28015
-2018-03-08T02:53:52.649928047 0.307345s notice: Listening for administrative HTTP connections on port 8080
-2018-03-08T02:53:52.649928442 0.307345s notice: Listening on cluster addresses: 127.0.0.1, ::1
-2018-03-08T02:53:52.649929589 0.307347s notice: Listening on driver addresses: 127.0.0.1, ::1
-2018-03-08T02:53:52.649930966 0.307348s notice: Listening on http addresses: 127.0.0.1, ::1
-2018-03-08T02:53:52.649932961 0.307350s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
-2018-03-08T02:53:52.649934913 0.307352s notice: Server ready, "dotone_vg4" 811a0a60-e033-4531-8c26-dc3a3cd74164
-2018-03-08T02:55:12.134987010 79.792405s info: Table f52024ae-db74-47a5-8086-2e79f64a18e3: Starting a new Raft election for term 1.
-2018-03-08T02:55:12.135365418 79.792783s info: Table f52024ae-db74-47a5-8086-2e79f64a18e3: Added replica on this server.
-2018-03-08T02:55:12.275531501 79.932949s info: Table f52024ae-db74-47a5-8086-2e79f64a18e3: This server is Raft leader for term 1. Latest log index is 0.
-2018-03-08T02:55:15.183895318 82.841313s info: Table fade7562-4f81-44e9-b623-5a6069fd8392: Added replica on this server.
-2018-03-08T02:55:15.183939733 82.841357s info: Table fade7562-4f81-44e9-b623-5a6069fd8392: Starting a new Raft election for term 1.
-2018-03-08T02:55:15.335974008 82.993391s info: Table fade7562-4f81-44e9-b623-5a6069fd8392: This server is Raft leader for term 1. Latest log index is 0.
-2018-03-08T03:51:42.251481139 3469.908899s notice: Server got SIGINT from pid 0, uid 0; shutting down...
-2018-03-08T03:51:42.251806317 3469.909224s notice: Shutting down client connections...
-2018-03-08T03:51:42.252093914 3469.909511s notice: All client connections closed.
-2018-03-08T03:51:42.252110317 3469.909528s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
-2018-03-08T03:51:42.256071560 3469.913489s notice: Storage engine shut down.
-2018-03-08T17:29:46.206197288 0.119818s notice: Running rethinkdb 2.3.6 (GCC 7.2.1)...
-2018-03-08T17:29:46.218871622 0.132493s notice: Running on Linux 4.15.3-2-ARCH x86_64
-2018-03-08T17:29:46.218907711 0.132528s notice: Loading data from directory /anis/gasbot/rethinkdb_data
-2018-03-08T17:29:46.469415804 0.383036s info: Automatically using cache size of 6482 MB
-2018-03-08T17:29:46.472742928 0.386363s notice: Listening for intracluster connections on port 29015
-2018-03-08T17:29:46.624095359 0.537716s notice: Listening for client driver connections on port 28015
-2018-03-08T17:29:46.624192245 0.537812s notice: Listening for administrative HTTP connections on port 8080
-2018-03-08T17:29:46.624193422 0.537814s notice: Listening on cluster addresses: 127.0.0.1, ::1
-2018-03-08T17:29:46.624194341 0.537814s notice: Listening on driver addresses: 127.0.0.1, ::1
-2018-03-08T17:29:46.624195175 0.537815s notice: Listening on http addresses: 127.0.0.1, ::1
-2018-03-08T17:29:46.624196076 0.537816s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
-2018-03-08T17:29:46.624201239 0.537821s notice: Server ready, "dotone_vg4" 811a0a60-e033-4531-8c26-dc3a3cd74164
-2018-03-08T17:29:47.648949833 1.562570s info: Table f52024ae-db74-47a5-8086-2e79f64a18e3: Starting a new Raft election for term 2.
-2018-03-08T17:29:47.662701582 1.576322s info: Table fade7562-4f81-44e9-b623-5a6069fd8392: Starting a new Raft election for term 2.
-2018-03-08T17:29:47.900417334 1.814038s info: Table f52024ae-db74-47a5-8086-2e79f64a18e3: This server is Raft leader for term 2. Latest log index is 3.
-2018-03-08T17:29:48.040962671 1.954583s info: Table fade7562-4f81-44e9-b623-5a6069fd8392: This server is Raft leader for term 2. Latest log index is 3.
+2018-03-08T22:18:21.998274215 0.111440s notice: Recursively removing directory /anis/gasbot/rethinkdb_data/tmp
+2018-03-08T22:18:22.019418817 0.132584s notice: Initializing directory /anis/gasbot/rethinkdb_data
+2018-03-08T22:18:22.019464047 0.132630s info: Creating a default database for your convenience. (This is because you ran 'rethinkdb' without 'create', 'serve', or '--join', and the directory '/anis/gasbot/rethinkdb_data' did not already exist or is empty.)
+2018-03-08T22:18:22.019478300 0.132644s notice: Running rethinkdb 2.3.6 (GCC 7.2.1)...
+2018-03-08T22:18:22.023075600 0.136242s notice: Running on Linux 4.15.3-2-ARCH x86_64
+2018-03-08T22:18:22.023112031 0.136278s notice: Loading data from directory /anis/gasbot/rethinkdb_data
+2018-03-08T22:18:22.316349882 0.429516s info: Automatically using cache size of 5323 MB
+2018-03-08T22:18:22.316833475 0.429999s notice: Listening for intracluster connections on port 29015
+2018-03-08T22:18:22.317679356 0.430845s notice: Listening for client driver connections on port 28015
+2018-03-08T22:18:22.317831406 0.430997s notice: Listening for administrative HTTP connections on port 8080
+2018-03-08T22:18:22.317832664 0.430998s notice: Listening on cluster addresses: 127.0.0.1, ::1
+2018-03-08T22:18:22.317836414 0.431002s notice: Listening on driver addresses: 127.0.0.1, ::1
+2018-03-08T22:18:22.317841392 0.431007s notice: Listening on http addresses: 127.0.0.1, ::1
+2018-03-08T22:18:22.317847708 0.431013s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2018-03-08T22:18:22.317854292 0.431020s notice: Server ready, "dotone_ml3" 02a55484-a0d6-463b-8a5e-75841253fcb1
+2018-03-08T22:18:24.431076767 2.544243s notice: Server got SIGINT from pid 0, uid 0; shutting down...
+2018-03-08T22:18:24.431253699 2.544420s notice: Shutting down client connections...
+2018-03-08T22:18:24.431332363 2.544498s notice: All client connections closed.
+2018-03-08T22:18:24.431337083 2.544503s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2018-03-08T22:18:24.431752670 2.544918s notice: Storage engine shut down.
+2018-03-08T22:18:28.566133907 0.027069s notice: Running rethinkdb 2.3.6 (GCC 7.2.1)...
+2018-03-08T22:18:28.571573003 0.032510s notice: Running on Linux 4.15.3-2-ARCH x86_64
+2018-03-08T22:18:28.571630155 0.032565s notice: Loading data from directory /anis/gasbot/rethinkdb_data
+2018-03-08T22:18:28.710948055 0.171883s info: Automatically using cache size of 5288 MB
+2018-03-08T22:18:28.711354785 0.172290s notice: Listening for intracluster connections on port 29015
+2018-03-08T22:18:28.712121803 0.173057s notice: Listening for client driver connections on port 28015
+2018-03-08T22:18:28.712218492 0.173153s notice: Listening for administrative HTTP connections on port 8080
+2018-03-08T22:18:28.712219173 0.173154s notice: Listening on cluster addresses: 127.0.0.1, ::1
+2018-03-08T22:18:28.712220819 0.173156s notice: Listening on driver addresses: 127.0.0.1, ::1
+2018-03-08T22:18:28.712223108 0.173158s notice: Listening on http addresses: 127.0.0.1, ::1
+2018-03-08T22:18:28.712226859 0.173162s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2018-03-08T22:18:28.712230524 0.173165s notice: Server ready, "dotone_ml3" 02a55484-a0d6-463b-8a5e-75841253fcb1
+2018-03-08T22:18:33.922115833 5.383051s info: Table 5a4ae7c6-0916-4dc3-8ee2-55230b2601b5: Starting a new Raft election for term 1.
+2018-03-08T22:18:33.922329404 5.383264s info: Table 5a4ae7c6-0916-4dc3-8ee2-55230b2601b5: Added replica on this server.
+2018-03-08T22:18:33.994922623 5.455858s info: Table 5a4ae7c6-0916-4dc3-8ee2-55230b2601b5: This server is Raft leader for term 1. Latest log index is 0.
+2018-03-08T22:18:35.410065941 6.871001s info: Table 99bd74f1-e8df-443f-a4b0-a09f5ba372af: Starting a new Raft election for term 1.
+2018-03-08T22:18:35.410419210 6.871354s info: Table 99bd74f1-e8df-443f-a4b0-a09f5ba372af: Added replica on this server.
+2018-03-08T22:18:35.479977032 6.940912s info: Table 99bd74f1-e8df-443f-a4b0-a09f5ba372af: This server is Raft leader for term 1. Latest log index is 0.
+2018-03-08T22:20:46.505325475 137.966261s notice: Removing file /anis/gasbot/rethinkdb_data/5a4ae7c6-0916-4dc3-8ee2-55230b2601b5
+2018-03-08T22:20:46.505330512 137.966265s info: Table 5a4ae7c6-0916-4dc3-8ee2-55230b2601b5: Deleted the table.
+2018-03-08T22:20:46.655849013 138.116784s notice: Removing file /anis/gasbot/rethinkdb_data/99bd74f1-e8df-443f-a4b0-a09f5ba372af
+2018-03-08T22:20:46.655853836 138.116789s info: Table 99bd74f1-e8df-443f-a4b0-a09f5ba372af: Deleted the table.
+2018-03-08T22:20:48.375447320 139.836382s info: Table 24a24200-3b3b-41d5-bd84-37af4bb7e342: Starting a new Raft election for term 1.
+2018-03-08T22:20:48.375641230 139.836576s info: Table 24a24200-3b3b-41d5-bd84-37af4bb7e342: Added replica on this server.
+2018-03-08T22:20:48.521063920 139.981999s info: Table 24a24200-3b3b-41d5-bd84-37af4bb7e342: This server is Raft leader for term 1. Latest log index is 0.
+2018-03-08T22:20:51.167233779 142.628169s info: Table ecd445a1-1182-4dec-a5b4-84de26040d68: Starting a new Raft election for term 1.
+2018-03-08T22:20:51.167524709 142.628460s info: Table ecd445a1-1182-4dec-a5b4-84de26040d68: Added replica on this server.
+2018-03-08T22:20:51.320494671 142.781430s info: Table ecd445a1-1182-4dec-a5b4-84de26040d68: This server is Raft leader for term 1. Latest log index is 0.
+2018-03-08T22:22:09.462757681 220.923693s notice: Removing file /anis/gasbot/rethinkdb_data/24a24200-3b3b-41d5-bd84-37af4bb7e342
+2018-03-08T22:22:09.462761790 220.923697s info: Table 24a24200-3b3b-41d5-bd84-37af4bb7e342: Deleted the table.
+2018-03-08T22:22:09.617255668 221.078191s notice: Removing file /anis/gasbot/rethinkdb_data/ecd445a1-1182-4dec-a5b4-84de26040d68
+2018-03-08T22:22:09.617261017 221.078196s info: Table ecd445a1-1182-4dec-a5b4-84de26040d68: Deleted the table.
+2018-03-08T22:22:11.403972098 222.864907s info: Table 0e845cd3-c6fe-4483-9d81-d832da94cb9f: Starting a new Raft election for term 1.
+2018-03-08T22:22:11.404190622 222.865126s info: Table 0e845cd3-c6fe-4483-9d81-d832da94cb9f: Added replica on this server.
+2018-03-08T22:22:11.542522858 223.003458s info: Table 0e845cd3-c6fe-4483-9d81-d832da94cb9f: This server is Raft leader for term 1. Latest log index is 0.
+2018-03-08T22:22:14.567166257 226.028102s info: Table c3f6b027-cd9c-4271-9484-ec175a5ec470: Starting a new Raft election for term 1.
+2018-03-08T22:22:14.567405011 226.028340s info: Table c3f6b027-cd9c-4271-9484-ec175a5ec470: Added replica on this server.
+2018-03-08T22:22:14.713317443 226.174252s info: Table c3f6b027-cd9c-4271-9484-ec175a5ec470: This server is Raft leader for term 1. Latest log index is 0.
+2018-03-08T22:23:26.894343379 298.355278s notice: Removing file /anis/gasbot/rethinkdb_data/0e845cd3-c6fe-4483-9d81-d832da94cb9f
+2018-03-08T22:23:26.894347921 298.355283s info: Table 0e845cd3-c6fe-4483-9d81-d832da94cb9f: Deleted the table.
+2018-03-08T22:23:27.049874368 298.510810s notice: Removing file /anis/gasbot/rethinkdb_data/c3f6b027-cd9c-4271-9484-ec175a5ec470
+2018-03-08T22:23:27.049880702 298.510815s info: Table c3f6b027-cd9c-4271-9484-ec175a5ec470: Deleted the table.
+2018-03-08T22:23:28.753185997 300.214121s info: Table 3894a442-e191-4acd-bfad-f40cca62adcc: Starting a new Raft election for term 1.
+2018-03-08T22:23:28.753317428 300.214252s info: Table 3894a442-e191-4acd-bfad-f40cca62adcc: Added replica on this server.
+2018-03-08T22:23:28.904966701 300.365902s info: Table 3894a442-e191-4acd-bfad-f40cca62adcc: This server is Raft leader for term 1. Latest log index is 0.
+2018-03-08T22:23:32.408954620 303.869890s info: Table 21e785a3-d739-4309-9d6b-0edd9c78961f: Starting a new Raft election for term 1.
+2018-03-08T22:23:32.409134762 303.870070s info: Table 21e785a3-d739-4309-9d6b-0edd9c78961f: Added replica on this server.
+2018-03-08T22:23:32.557377331 304.018312s info: Table 21e785a3-d739-4309-9d6b-0edd9c78961f: This server is Raft leader for term 1. Latest log index is 0.
+2018-03-09T02:12:38.310837781 14049.771773s notice: Server got SIGINT from pid 0, uid 0; shutting down...
+2018-03-09T02:12:38.311284062 14049.772219s notice: Shutting down client connections...
+2018-03-09T02:12:38.312106776 14049.773042s notice: All client connections closed.
+2018-03-09T02:12:38.312129352 14049.773064s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2018-03-09T02:12:38.318872395 14049.779808s notice: Storage engine shut down.
+2018-03-09T02:12:39.544156407 0.318030s notice: Running rethinkdb 2.3.6 (GCC 7.2.1)...
+2018-03-09T02:12:39.548580151 0.322455s notice: Running on Linux 4.15.3-2-ARCH x86_64
+2018-03-09T02:12:39.548628432 0.322502s notice: Loading data from directory /anis/gasbot/rethinkdb_data
+2018-03-09T02:12:39.763846113 0.537720s info: Automatically using cache size of 5100 MB
+2018-03-09T02:12:39.764392397 0.538266s notice: Listening for intracluster connections on port 29015
+2018-03-09T02:12:39.851996023 0.625870s notice: Listening for client driver connections on port 28015
+2018-03-09T02:12:39.852065650 0.625939s notice: Listening for administrative HTTP connections on port 8080
+2018-03-09T02:12:39.852072557 0.625946s notice: Listening on cluster addresses: 127.0.0.1, ::1
+2018-03-09T02:12:39.852073635 0.625947s notice: Listening on driver addresses: 127.0.0.1, ::1
+2018-03-09T02:12:39.852075186 0.625949s notice: Listening on http addresses: 127.0.0.1, ::1
+2018-03-09T02:12:39.852076081 0.625949s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2018-03-09T02:12:39.852077063 0.625950s notice: Server ready, "dotone_ml3" 02a55484-a0d6-463b-8a5e-75841253fcb1
+2018-03-09T02:12:41.533790204 2.307664s info: Table 3894a442-e191-4acd-bfad-f40cca62adcc: Starting a new Raft election for term 2.
+2018-03-09T02:12:41.574194997 2.348069s info: Table 21e785a3-d739-4309-9d6b-0edd9c78961f: Starting a new Raft election for term 2.
+2018-03-09T02:12:41.781636000 2.555510s info: Table 3894a442-e191-4acd-bfad-f40cca62adcc: This server is Raft leader for term 2. Latest log index is 3.
+2018-03-09T02:12:41.922259079 2.696133s info: Table 21e785a3-d739-4309-9d6b-0edd9c78961f: This server is Raft leader for term 2. Latest log index is 3.
+2018-03-09T02:13:08.036231762 28.810105s notice: Removing file /anis/gasbot/rethinkdb_data/21e785a3-d739-4309-9d6b-0edd9c78961f
+2018-03-09T02:13:08.036235636 28.810109s info: Table 21e785a3-d739-4309-9d6b-0edd9c78961f: Deleted the table.
+2018-03-09T02:13:08.185288506 28.959162s notice: Removing file /anis/gasbot/rethinkdb_data/3894a442-e191-4acd-bfad-f40cca62adcc
+2018-03-09T02:13:08.185293680 28.959167s info: Table 3894a442-e191-4acd-bfad-f40cca62adcc: Deleted the table.
+2018-03-09T02:13:09.973863528 30.747737s info: Table 32c081f4-42c6-4f5a-80fe-1dbbcc9afdde: Starting a new Raft election for term 1.
+2018-03-09T02:13:09.973941426 30.747815s info: Table 32c081f4-42c6-4f5a-80fe-1dbbcc9afdde: Added replica on this server.
+2018-03-09T02:13:10.110358475 30.884232s info: Table 32c081f4-42c6-4f5a-80fe-1dbbcc9afdde: This server is Raft leader for term 1. Latest log index is 0.
+2018-03-09T02:13:12.897227747 33.671102s info: Table 8b3166be-15be-42e8-9fb2-d98119679d3a: Added replica on this server.
+2018-03-09T02:13:12.897266499 33.671140s info: Table 8b3166be-15be-42e8-9fb2-d98119679d3a: Starting a new Raft election for term 1.
+2018-03-09T02:13:12.980059142 33.753933s info: Table 8b3166be-15be-42e8-9fb2-d98119679d3a: This server is Raft leader for term 1. Latest log index is 0.
+2018-03-09T03:31:11.530446902 4712.304321s notice: Server got SIGINT from pid 0, uid 0; shutting down...
+2018-03-09T03:31:11.530645333 4712.304519s notice: Shutting down client connections...
+2018-03-09T03:31:11.532279409 4712.306153s notice: All client connections closed.
+2018-03-09T03:31:11.532290599 4712.306164s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2018-03-09T03:31:11.536244160 4712.310118s notice: Storage engine shut down.
+2018-03-09T19:23:38.212968835 0.111472s notice: Running rethinkdb 2.3.6 (GCC 7.2.1)...
+2018-03-09T19:23:38.216788434 0.115293s notice: Running on Linux 4.15.3-2-ARCH x86_64
+2018-03-09T19:23:38.216833829 0.115337s notice: Loading data from directory /anis/gasbot/rethinkdb_data
+2018-03-09T19:23:38.684873261 0.583376s info: Automatically using cache size of 5928 MB
+2018-03-09T19:23:38.688904795 0.587408s notice: Listening for intracluster connections on port 29015
+2018-03-09T19:23:39.075878853 0.974382s notice: Listening for client driver connections on port 28015
+2018-03-09T19:23:39.075969407 0.974473s notice: Listening for administrative HTTP connections on port 8080
+2018-03-09T19:23:39.075979804 0.974483s notice: Listening on cluster addresses: 127.0.0.1, ::1
+2018-03-09T19:23:39.075981668 0.974485s notice: Listening on driver addresses: 127.0.0.1, ::1
+2018-03-09T19:23:39.075983596 0.974487s notice: Listening on http addresses: 127.0.0.1, ::1
+2018-03-09T19:23:39.075986153 0.974489s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2018-03-09T19:23:39.075988130 0.974491s notice: Server ready, "dotone_ml3" 02a55484-a0d6-463b-8a5e-75841253fcb1
+2018-03-09T19:23:40.079831051 1.978334s info: Table 32c081f4-42c6-4f5a-80fe-1dbbcc9afdde: Starting a new Raft election for term 2.
+2018-03-09T19:23:40.227603354 2.126106s info: Table 32c081f4-42c6-4f5a-80fe-1dbbcc9afdde: This server is Raft leader for term 2. Latest log index is 3.
+2018-03-09T19:23:40.605454084 2.503957s info: Table 8b3166be-15be-42e8-9fb2-d98119679d3a: Starting a new Raft election for term 2.
+2018-03-09T19:23:40.892873103 2.791376s info: Table 8b3166be-15be-42e8-9fb2-d98119679d3a: This server is Raft leader for term 2. Latest log index is 3.
+2018-03-09T19:26:53.712055576 195.610559s notice: Removing file /anis/gasbot/rethinkdb_data/32c081f4-42c6-4f5a-80fe-1dbbcc9afdde
+2018-03-09T19:26:53.712059309 195.610562s info: Table 32c081f4-42c6-4f5a-80fe-1dbbcc9afdde: Deleted the table.
+2018-03-09T19:26:53.867823729 195.766327s notice: Removing file /anis/gasbot/rethinkdb_data/8b3166be-15be-42e8-9fb2-d98119679d3a
+2018-03-09T19:26:53.867827752 195.766331s info: Table 8b3166be-15be-42e8-9fb2-d98119679d3a: Deleted the table.
+2018-03-09T19:26:55.481628575 197.380132s info: Table 1ca3c05b-efed-4c10-a407-3ab936496bb7: Starting a new Raft election for term 1.
+2018-03-09T19:26:55.481785209 197.380288s info: Table 1ca3c05b-efed-4c10-a407-3ab936496bb7: Added replica on this server.
+2018-03-09T19:26:55.632767422 197.531271s info: Table 1ca3c05b-efed-4c10-a407-3ab936496bb7: This server is Raft leader for term 1. Latest log index is 0.
+2018-03-09T19:26:58.263750384 200.162254s info: Table 1c4b4681-7cb7-4c77-8524-ef2fd20b637b: Starting a new Raft election for term 1.
+2018-03-09T19:26:58.263931369 200.162435s info: Table 1c4b4681-7cb7-4c77-8524-ef2fd20b637b: Added replica on this server.
+2018-03-09T19:26:58.412063573 200.310567s info: Table 1c4b4681-7cb7-4c77-8524-ef2fd20b637b: This server is Raft leader for term 1. Latest log index is 0.
+2018-03-09T19:31:59.676156792 501.574660s notice: Server got SIGTERM from pid 1, uid 0; shutting down...
+2018-03-09T19:31:59.676325749 501.574829s notice: Shutting down client connections...
+2018-03-09T19:31:59.680129197 501.578632s notice: All client connections closed.
+2018-03-09T19:31:59.682045903 501.580549s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2018-03-09T19:45:42.401333371 0.025403s notice: Running rethinkdb 2.3.6 (GCC 7.2.1)...
+2018-03-09T19:45:42.459217309 0.083288s notice: Running on Linux 4.15.3-2-ARCH x86_64
+2018-03-09T19:45:42.459251420 0.083321s notice: Loading data from directory /anis/gasbot/rethinkdb_data
+2018-03-09T19:45:42.834614597 0.458684s info: Automatically using cache size of 6045 MB
+2018-03-09T19:45:42.838131252 0.462200s notice: Listening for intracluster connections on port 29015
+2018-03-09T19:45:43.085848103 0.709917s notice: Listening for client driver connections on port 28015
+2018-03-09T19:45:43.085951598 0.710021s notice: Listening for administrative HTTP connections on port 8080
+2018-03-09T19:45:43.085953181 0.710022s notice: Listening on cluster addresses: 127.0.0.1, ::1
+2018-03-09T19:45:43.085954814 0.710024s notice: Listening on driver addresses: 127.0.0.1, ::1
+2018-03-09T19:45:43.085956042 0.710025s notice: Listening on http addresses: 127.0.0.1, ::1
+2018-03-09T19:45:43.085957294 0.710026s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2018-03-09T19:45:43.085962156 0.710032s notice: Server ready, "dotone_ml3" 02a55484-a0d6-463b-8a5e-75841253fcb1
+2018-03-09T19:45:44.452997732 2.077067s info: Table 1c4b4681-7cb7-4c77-8524-ef2fd20b637b: Starting a new Raft election for term 2.
+2018-03-09T19:45:44.504377901 2.128447s info: Table 1ca3c05b-efed-4c10-a407-3ab936496bb7: Starting a new Raft election for term 2.
+2018-03-09T19:45:44.522967651 2.147037s info: Table 1c4b4681-7cb7-4c77-8524-ef2fd20b637b: This server is Raft leader for term 2. Latest log index is 3.
+2018-03-09T19:45:44.611808506 2.235878s info: Table 1ca3c05b-efed-4c10-a407-3ab936496bb7: This server is Raft leader for term 2. Latest log index is 3.
+2018-03-09T20:20:11.766851284 2069.390921s notice: Server got SIGINT from pid 0, uid 0; shutting down...
+2018-03-09T20:20:11.767255862 2069.391325s notice: Shutting down client connections...
+2018-03-09T20:20:11.767537849 2069.391607s notice: All client connections closed.
+2018-03-09T20:20:11.767545179 2069.391614s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2018-03-09T20:20:11.772908725 2069.396978s notice: Storage engine shut down.
+2018-03-09T20:20:12.653280332 0.111786s notice: Running rethinkdb 2.3.6 (GCC 7.2.1)...
+2018-03-09T20:20:12.656278088 0.114785s notice: Running on Linux 4.15.3-2-ARCH x86_64
+2018-03-09T20:20:12.656311648 0.114817s notice: Loading data from directory /anis/gasbot/rethinkdb_data
+2018-03-09T20:20:12.866328171 0.324834s info: Automatically using cache size of 5367 MB
+2018-03-09T20:20:12.866663601 0.325169s notice: Listening for intracluster connections on port 29015
+2018-03-09T20:20:12.953593581 0.412099s notice: Listening for client driver connections on port 28015
+2018-03-09T20:20:12.953654684 0.412160s notice: Listening for administrative HTTP connections on port 8080
+2018-03-09T20:20:12.953655210 0.412161s notice: Listening on cluster addresses: 127.0.0.1, ::1
+2018-03-09T20:20:12.953657365 0.412163s notice: Listening on driver addresses: 127.0.0.1, ::1
+2018-03-09T20:20:12.953657546 0.412163s notice: Listening on http addresses: 127.0.0.1, ::1
+2018-03-09T20:20:12.953658886 0.412164s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2018-03-09T20:20:12.953659522 0.412165s notice: Server ready, "dotone_ml3" 02a55484-a0d6-463b-8a5e-75841253fcb1
+2018-03-09T20:20:14.345820554 1.804326s info: Table 1c4b4681-7cb7-4c77-8524-ef2fd20b637b: Starting a new Raft election for term 3.
+2018-03-09T20:20:14.497871436 1.956377s info: Table 1c4b4681-7cb7-4c77-8524-ef2fd20b637b: This server is Raft leader for term 3. Latest log index is 6.
+2018-03-09T20:20:14.940252885 2.398759s info: Table 1ca3c05b-efed-4c10-a407-3ab936496bb7: Starting a new Raft election for term 3.
+2018-03-09T20:20:15.150073648 2.608579s info: Table 1ca3c05b-efed-4c10-a407-3ab936496bb7: This server is Raft leader for term 3. Latest log index is 6.
+2018-03-09T22:08:01.376447324 6468.834953s notice: Removing file /anis/gasbot/rethinkdb_data/1c4b4681-7cb7-4c77-8524-ef2fd20b637b
+2018-03-09T22:08:01.376452050 6468.834958s info: Table 1c4b4681-7cb7-4c77-8524-ef2fd20b637b: Deleted the table.
+2018-03-09T22:08:01.517165840 6468.975672s notice: Removing file /anis/gasbot/rethinkdb_data/1ca3c05b-efed-4c10-a407-3ab936496bb7
+2018-03-09T22:08:01.517177363 6468.975683s info: Table 1ca3c05b-efed-4c10-a407-3ab936496bb7: Deleted the table.
+2018-03-09T22:08:03.274287843 6470.732794s info: Table 67517593-fec3-44da-9994-78055e84ecb9: Starting a new Raft election for term 1.
+2018-03-09T22:08:03.274392515 6470.732898s info: Table 67517593-fec3-44da-9994-78055e84ecb9: Added replica on this server.
+2018-03-09T22:08:03.420344362 6470.878850s info: Table 67517593-fec3-44da-9994-78055e84ecb9: This server is Raft leader for term 1. Latest log index is 0.
+2018-03-09T22:08:06.106694238 6473.565200s info: Table d99711d4-b0fb-4d19-ad40-1ff3b2d14624: Starting a new Raft election for term 1.
+2018-03-09T22:08:06.106914952 6473.565421s info: Table d99711d4-b0fb-4d19-ad40-1ff3b2d14624: Added replica on this server.
+2018-03-09T22:08:06.259878090 6473.718384s info: Table d99711d4-b0fb-4d19-ad40-1ff3b2d14624: This server is Raft leader for term 1. Latest log index is 0.
+2018-03-10T23:50:25.670185072 0.115313s notice: Running rethinkdb 2.3.6 (GCC 7.2.1)...
+2018-03-10T23:50:25.696011243 0.141140s notice: Running on Linux 4.15.3-2-ARCH x86_64
+2018-03-10T23:50:25.696054420 0.141182s notice: Loading data from directory /anis/gasbot/rethinkdb_data
+2018-03-10T23:50:26.169650181 0.614778s info: Automatically using cache size of 5319 MB
+2018-03-10T23:50:26.173334274 0.618462s notice: Listening for intracluster connections on port 29015
+2018-03-10T23:50:26.624822568 1.069950s notice: Listening for client driver connections on port 28015
+2018-03-10T23:50:26.624934665 1.070062s notice: Listening for administrative HTTP connections on port 8080
+2018-03-10T23:50:26.624936711 1.070064s notice: Listening on cluster addresses: 127.0.0.1, ::1
+2018-03-10T23:50:26.624938384 1.070066s notice: Listening on driver addresses: 127.0.0.1, ::1
+2018-03-10T23:50:26.624944913 1.070072s notice: Listening on http addresses: 127.0.0.1, ::1
+2018-03-10T23:50:26.624947232 1.070075s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2018-03-10T23:50:26.624948539 1.070076s notice: Server ready, "dotone_ml3" 02a55484-a0d6-463b-8a5e-75841253fcb1
+2018-03-10T23:50:28.027170211 2.472298s info: Table 67517593-fec3-44da-9994-78055e84ecb9: Starting a new Raft election for term 2.
+2018-03-10T23:50:28.166435697 2.611564s info: Table 67517593-fec3-44da-9994-78055e84ecb9: This server is Raft leader for term 2. Latest log index is 3.
+2018-03-10T23:50:28.314356130 2.759484s info: Table d99711d4-b0fb-4d19-ad40-1ff3b2d14624: Starting a new Raft election for term 2.
+2018-03-10T23:50:28.557851158 3.002979s info: Table d99711d4-b0fb-4d19-ad40-1ff3b2d14624: This server is Raft leader for term 2. Latest log index is 3.

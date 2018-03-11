@@ -1,4 +1,15 @@
 [
   { "name": "defaultRole", "entry": "index.js", "enabled": true },
-  { "name": "defineRole", "entry": "index.js", "enabled": true }
+  { "name": "defineRole", "entry": "index.js", "enabled": true },
+  { "name": "antiInvite", "entry": "index.js", "enabled": true },
+  { "name": "createPick", "entry": "index.js", "enabled": true },
+  { "name": "checkPick", "entry": "index.js", "enabled": true },
+  { "name": "createRevivePick", "entry": "index.js", "enabled": true },
+  { "name": "checkRevivePick", "entry": "index.js", "enabled": true },
+  { "name": "kill", "entry": "index.js", "enabled": true },
+  { "name": "setOp", "entry": "index.js", "enabled": true },
+  { "name": "setHome", "entry": "index.js", "enabled": true },
+  { "name": "setReviveHome", "entry": "index.js", "enabled": true },
+  { "name": "endPicks", "entry": "index.js", "enabled": true },
+  { "name": "purge", "entry": "index.js", "enabled": true }
 ]

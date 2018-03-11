@@ -1,6 +1,9 @@
 let BOT
 
 const defineRole = async (message) => {
+  if (!message.guild) { return }
+  if (await BOT.isOp(message) === false) { return }
+
   const roleDef = message.content.split(' ')[1].toLowerCase()
   const roleName = message.content.split(' ').splice(2).join(' ')
 
