@@ -23,19 +23,35 @@ const kill = async (message) => {
 
   let error
 
+  if (message.member._roles.indexOf(killerRole) === -1) {
+    error = `You're not a Murderer, are you?`
+    BOT.send(message.author, {
+      title: 'Usage Error',
+      description: error,
+      color: BOT.colors.red
+    })
+    return
+  }
   if (toKill._roles.indexOf(deadRole) > -1) {
     error = `${toKill.user.username}#${toKill.user.discriminator} is already dead.`
+    BOT.send(message.author, {
+      title: 'Usage Error',
+      description: error,
+      color: BOT.colors.red
+    })
+    return
   }
   if (toKill._roles.indexOf(killerRole) > -1) {
     error = `${toKill.user.username}#${toKill.user.discriminator} has kill immunity.`
+    BOT.send(message.author, {
+      title: 'Usage Error',
+      description: error,
+      color: BOT.colors.red
+    })
+    return
   }
   if (toKill._roles.indexOf(playerRole) === -1) {
     error = `${toKill.user.username}#${toKill.user.discriminator} is not a player.`
-  }
-  if (message.member._roles.indexOf(killerRole) === -1) {
-    error = `You're not a Murderer, are you?`
-  }
-  if (error) {
     BOT.send(message.author, {
       title: 'Usage Error',
       description: error,
