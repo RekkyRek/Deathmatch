@@ -33,7 +33,7 @@ const kill = async (message) => {
     error = `${toKill.user.username}#${toKill.user.discriminator} is not a player.`
   }
   if (message.member._roles.indexOf(killerRole) === -1) {
-    error = `You're ded lol.`
+    error = `You're not a Murderer, are you?`
   }
   if (error) {
     BOT.send(message.author, {

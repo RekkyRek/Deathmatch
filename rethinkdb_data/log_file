@@ -195,3 +195,47 @@
 2018-03-10T23:50:28.166435697 2.611564s info: Table 67517593-fec3-44da-9994-78055e84ecb9: This server is Raft leader for term 2. Latest log index is 3.
 2018-03-10T23:50:28.314356130 2.759484s info: Table d99711d4-b0fb-4d19-ad40-1ff3b2d14624: Starting a new Raft election for term 2.
 2018-03-10T23:50:28.557851158 3.002979s info: Table d99711d4-b0fb-4d19-ad40-1ff3b2d14624: This server is Raft leader for term 2. Latest log index is 3.
+2018-03-11T02:14:22.966300528 8637.411429s notice: Server got SIGINT from pid 0, uid 0; shutting down...
+2018-03-11T02:14:22.966478596 8637.411606s notice: Shutting down client connections...
+2018-03-11T02:14:22.969433791 8637.414562s notice: All client connections closed.
+2018-03-11T02:14:22.969447397 8637.414575s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2018-03-11T02:14:23.070189966 8637.515318s notice: Storage engine shut down.
+2018-03-11T02:14:23.071315700 8637.516444s error: Failed to shutdown worker process: 'failed to send job function to worker'.  Killing it.
+2018-03-12T19:06:15.833628815 0.175857s notice: Running rethinkdb 2.3.6 (GCC 7.2.1)...
+2018-03-12T19:06:15.856656432 0.198886s notice: Running on Linux 4.15.3-2-ARCH x86_64
+2018-03-12T19:06:15.856697297 0.198926s notice: Loading data from directory /anis/gasbot/rethinkdb_data
+2018-03-12T19:06:16.394347897 0.736576s info: Automatically using cache size of 6081 MB
+2018-03-12T19:06:16.398160620 0.740389s notice: Listening for intracluster connections on port 29015
+2018-03-12T19:06:16.833693749 1.175922s notice: Listening for client driver connections on port 28015
+2018-03-12T19:06:16.833752782 1.175981s notice: Listening for administrative HTTP connections on port 8080
+2018-03-12T19:06:16.833759873 1.175988s notice: Listening on cluster addresses: 127.0.0.1, ::1
+2018-03-12T19:06:16.833761293 1.175990s notice: Listening on driver addresses: 127.0.0.1, ::1
+2018-03-12T19:06:16.833763354 1.175992s notice: Listening on http addresses: 127.0.0.1, ::1
+2018-03-12T19:06:16.833764427 1.175993s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2018-03-12T19:06:16.833765709 1.175994s notice: Server ready, "dotone_ml3" 02a55484-a0d6-463b-8a5e-75841253fcb1
+2018-03-12T19:06:18.608223800 2.950452s info: Table 67517593-fec3-44da-9994-78055e84ecb9: Starting a new Raft election for term 3.
+2018-03-12T19:06:18.613356374 2.955585s info: Table d99711d4-b0fb-4d19-ad40-1ff3b2d14624: Starting a new Raft election for term 3.
+2018-03-12T19:06:18.833796936 3.176026s info: Table 67517593-fec3-44da-9994-78055e84ecb9: This server is Raft leader for term 3. Latest log index is 6.
+2018-03-12T19:06:18.877530965 3.219760s info: Table d99711d4-b0fb-4d19-ad40-1ff3b2d14624: This server is Raft leader for term 3. Latest log index is 6.
+2018-03-12T19:06:21.321028155 5.663257s notice: Server got SIGINT from pid 0, uid 0; shutting down...
+2018-03-12T19:06:21.321137597 5.663366s notice: Shutting down client connections...
+2018-03-12T19:06:21.330990968 5.673220s notice: All client connections closed.
+2018-03-12T19:06:21.330998422 5.673227s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2018-03-12T19:06:21.998978872 6.341207s notice: Storage engine shut down.
+2018-03-12T19:06:21.999750164 6.341979s error: Failed to shutdown worker process: 'failed to send job function to worker'.  Killing it.
+2018-03-12T19:10:00.150902965 0.082324s notice: Running rethinkdb 2.3.6 (GCC 7.2.1)...
+2018-03-12T19:10:00.154467261 0.085889s notice: Running on Linux 4.15.3-2-ARCH x86_64
+2018-03-12T19:10:00.154504364 0.085925s notice: Loading data from directory /anis/gasbot/rethinkdb_data
+2018-03-12T19:10:00.617591862 0.549013s info: Automatically using cache size of 6019 MB
+2018-03-12T19:10:00.617888188 0.549309s notice: Listening for intracluster connections on port 29015
+2018-03-12T19:10:00.722549889 0.653971s notice: Listening for client driver connections on port 28015
+2018-03-12T19:10:00.722645977 0.654067s notice: Listening for administrative HTTP connections on port 8080
+2018-03-12T19:10:00.722648257 0.654069s notice: Listening on cluster addresses: 127.0.0.1, ::1
+2018-03-12T19:10:00.722649491 0.654070s notice: Listening on driver addresses: 127.0.0.1, ::1
+2018-03-12T19:10:00.722657055 0.654078s notice: Listening on http addresses: 127.0.0.1, ::1
+2018-03-12T19:10:00.722658463 0.654079s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2018-03-12T19:10:00.722659728 0.654081s notice: Server ready, "dotone_ml3" 02a55484-a0d6-463b-8a5e-75841253fcb1
+2018-03-12T19:10:02.022325159 1.953746s info: Table 67517593-fec3-44da-9994-78055e84ecb9: Starting a new Raft election for term 4.
+2018-03-12T19:10:02.169036621 2.100458s info: Table 67517593-fec3-44da-9994-78055e84ecb9: This server is Raft leader for term 4. Latest log index is 9.
+2018-03-12T19:10:02.566246630 2.497668s info: Table d99711d4-b0fb-4d19-ad40-1ff3b2d14624: Starting a new Raft election for term 4.
+2018-03-12T19:10:02.832706945 2.764128s info: Table d99711d4-b0fb-4d19-ad40-1ff3b2d14624: This server is Raft leader for term 4. Latest log index is 9.

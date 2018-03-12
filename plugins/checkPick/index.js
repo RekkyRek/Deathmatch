@@ -46,6 +46,15 @@ const endPick = async (pick) => {
 
   killerRole = guild.roles.get(killerRole)
 
+  let playerRole = await BOT.database.getServerData(pick.guildID, 'role_player')
+  let player = message.guild.roles.get(playerRole)
+  let killers = message.guild.roles.get(playerRole)
+  if (killers) {
+    killers.members.forEach(killer => {
+      killer.setRoles([player])
+    })
+  }
+
   let raffle = []
   let entered = await BOT.database.getServerData('GLOBAL', 'running_pick_entered')
   entered.users[BOT.client.user.id] = { entered: false }
