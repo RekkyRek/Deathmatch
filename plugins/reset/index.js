@@ -35,8 +35,7 @@ const reset = async (message) => {
   if (deadPlayers) {
     deadPlayers.members.forEach(dead => {
       console.log('dead')
-      dead.removeRole(deadRole)
-      dead.addRole(playerRole)
+      dead.setRoles([playerRole])
     })
   }
 

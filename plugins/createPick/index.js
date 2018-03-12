@@ -37,11 +37,12 @@ const createPick = async (message) => {
     return
   }
 
+  let deadRole = await BOT.database.getServerData(pick.guildID, 'role_dead')
   let killerRole = await BOT.database.getServerData(pick.guildID, 'role_killer')
   let killers = message.guild.roles.get(killerRole)
   if (killers) {
     killers.members.forEach(killer => {
-      killer.removeRole(killerRole)
+      killer.setRoles([deadRole])
     })
   }
 
