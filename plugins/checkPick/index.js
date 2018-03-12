@@ -47,11 +47,10 @@ const endPick = async (pick) => {
   killerRole = guild.roles.get(killerRole)
 
   let playerRole = await BOT.database.getServerData(pick.guildID, 'role_player')
-  let player = message.guild.roles.get(playerRole)
   let killers = message.guild.roles.get(playerRole)
   if (killers) {
     killers.members.forEach(killer => {
-      killer.setRoles([player])
+      killer.setRoles([playerRole])
     })
   }
 
@@ -97,7 +96,7 @@ const endPick = async (pick) => {
 
   winners.forEach(winner => {
     console.log(guild.members.get(winner).toString())
-    guild.members.get(winner).addRole(killerRole).catch(e => console.log(e))
+    guild.members.get(winner).setRoles([killerRole]).catch(e => console.log(e))
   })
 
   let winnerStr = ``

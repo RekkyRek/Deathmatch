@@ -88,9 +88,11 @@ const endPick = async (pick) => {
 
   console.log('winners', winners)
 
+  let playerRole = await BOT.database.getServerData(pick.guildID, 'role_player')
+
   winners.forEach(winner => {
     console.log(guild.members.get(winner).toString())
-    guild.members.get(winner).removeRole(deadRole).catch(e => console.log(e))
+    guild.members.get(winner).setRoles(playerRole).catch(e => console.log(e))
   })
 
   let winnerStr = ``

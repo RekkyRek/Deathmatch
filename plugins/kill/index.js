@@ -44,9 +44,8 @@ const kill = async (message) => {
     return
   }
 
-  message.member.removeRole(killerRole)
-  toKill.addRole(deadRole)
-  toKill.removeRole(playerRole)
+  message.member.setRole([playerRole])
+  toKill.setRoles([deadRole])
   BOT.success(message)
 }
 
