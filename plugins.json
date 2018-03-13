@@ -12,5 +12,6 @@
   { "name": "setReviveHome", "entry": "index.js", "enabled": true },
   { "name": "endPicks", "entry": "index.js", "enabled": true },
   { "name": "purge", "entry": "index.js", "enabled": true },
-  { "name": "reset", "entry": "index.js", "enabled": true }
+  { "name": "reset", "entry": "index.js", "enabled": true },
+  { "name": "memeWin", "entry": "index.js", "enabled": true }
 ]
