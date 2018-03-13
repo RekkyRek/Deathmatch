@@ -46,6 +46,15 @@ const createPick = async (message) => {
     })
   }
 
+  let playerRole = await BOT.database.getServerData(pick.guildID, 'role_player')
+  let immunityRole = await BOT.database.getServerData(pick.guildID, 'role_immunity')
+  let immunityMembers = message.guild.roles.get(immunityRole)
+  if (immunityMembers) {
+    immunityMembers.members.forEach(immunity => {
+      immunity.setRoles([playerRole])
+    })
+  }
+
   let pickMsg = await BOT.send(message.guild.channels.get(homeID), {
     title: title,
     description: `${amountWinners} winners. React to enter`,

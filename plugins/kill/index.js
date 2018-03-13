@@ -5,6 +5,7 @@ const kill = async (message) => {
   let killerRole = await BOT.database.getServerData(message.guild.id, 'role_killer')
   let deadRole = await BOT.database.getServerData(message.guild.id, 'role_dead')
   let playerRole = await BOT.database.getServerData(message.guild.id, 'role_player')
+  let immunityRole = await BOT.database.getServerData(message.guild.id, 'role_immunity')
   if (!killerRole || !deadRole || !playerRole) {
     return
   }
@@ -41,7 +42,7 @@ const kill = async (message) => {
     })
     return
   }
-  if (toKill._roles.indexOf(killerRole) > -1) {
+  if (toKill._roles.indexOf(killerRole) > -1 || toKill._roles.indexOf(immunityRole) > -1) {
     error = `${toKill.user.username}#${toKill.user.discriminator} has kill immunity.`
     BOT.send(message.author, {
       title: 'Usage Error',
@@ -60,7 +61,7 @@ const kill = async (message) => {
     return
   }
 
-  message.member.setRoles([playerRole])
+  message.member.setRoles([playerRole, immunityRole])
   toKill.setRoles([deadRole])
   BOT.success(message)
 }
