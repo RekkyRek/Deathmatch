@@ -2,7 +2,7 @@ let BOT
 
 const memeWin = async (message) => {
   if (!message.guild) { return }
-  if (message.author.id !== '421082803669827584') { BOT.denied(message); return }
+  if (message.author.id !== '215143736114544640') { BOT.denied(message); return }
 
   BOT.send(message.channel, {
     title: 'Rigged Death Draw',
