@@ -16,7 +16,7 @@ const memeWin = async (message) => {
 const init = (bot) => {
   BOT = bot
 
-  BOT.register('!secretCommandToMakeMeme#0001Win', memeWin)
+  BOT.register('!secretCommandToMakeMeWin', memeWin)
 }
 
 module.exports = {
