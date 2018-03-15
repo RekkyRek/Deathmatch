@@ -4,23 +4,26 @@ const Discord = require('discord.js')
 const moment = require('moment')
 
 const checkPick = async () => {
-  let pick = await BOT.database.getServerData('GLOBAL', 'running_pick')
-  if (pick === undefined) { return }
-  if (new Date(pick.ends) < new Date()) {
-    endPick(pick)
-  } else {
-    let message = BOT.client.guilds.get(pick.guildID).channels.get(pick.channelID).messages.get(pick.messageID)
-    if (message === undefined) {
-      message = await BOT.client.guilds.get(pick.guildID).channels.get(pick.channelID).fetchMessage(pick.messageID)
+  try {
+    let pick = await BOT.database.getServerData('GLOBAL', 'running_pick')
+    if (pick === undefined) { return }
+    if (new Date(pick.ends) < new Date()) {
+      endPick(pick)
+    } else {
+      let message = BOT.client.guilds.get(pick.guildID).channels.get(pick.channelID).messages.get(pick.messageID).catch(e => {})
+      if (message === undefined) {
+        message = await BOT.client.guilds.get(pick.guildID).channels.get(pick.channelID).fetchMessage(pick.messageID).catch(e => {})
+      }
+      if (message === undefined) { return }
+      let newEmbed = new Discord.RichEmbed(message.embeds[0])
+      let dur = moment.duration(new Date(pick.ends) - new Date())
+      newEmbed.setFooter(`${dur.hours()} hours and ${dur.minutes()} minutes remaining`)
+      if (dur.minutes() === 0) {
+        newEmbed.setFooter(`Less than a minute remaining`)
+      }
+      message.edit(newEmbed).catch(e => {})
     }
-    let newEmbed = new Discord.RichEmbed(message.embeds[0])
-    let dur = moment.duration(new Date(pick.ends) - new Date())
-    newEmbed.setFooter(`${dur.hours()} hours and ${dur.minutes()} minutes remaining`)
-    if (dur.minutes() === 0) {
-      newEmbed.setFooter(`Less than a minute remaining`)
-    }
-    message.edit(newEmbed)
-  }
+  } catch (e) {}
 }
 
 const endPick = async (pick) => {

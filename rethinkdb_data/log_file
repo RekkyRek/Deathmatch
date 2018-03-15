@@ -244,3 +244,19 @@
 2018-03-12T20:41:00.435538261 5460.366960s notice: All client connections closed.
 2018-03-12T20:41:00.435550403 5460.366971s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
 2018-03-12T20:41:00.442243529 5460.373665s notice: Storage engine shut down.
+2018-03-15T17:08:24.320827225 0.146450s notice: Running rethinkdb 2.3.6 (GCC 7.2.1)...
+2018-03-15T17:08:24.324172178 0.149796s notice: Running on Linux 4.15.3-2-ARCH x86_64
+2018-03-15T17:08:24.324211766 0.149835s notice: Loading data from directory /anis/gasbot/rethinkdb_data
+2018-03-15T17:08:24.621042028 0.446665s info: Automatically using cache size of 6252 MB
+2018-03-15T17:08:24.625530244 0.451153s notice: Listening for intracluster connections on port 29015
+2018-03-15T17:08:24.827835703 0.653459s notice: Listening for client driver connections on port 28015
+2018-03-15T17:08:24.827911500 0.653535s notice: Listening for administrative HTTP connections on port 8080
+2018-03-15T17:08:24.827921019 0.653544s notice: Listening on cluster addresses: 127.0.0.1, ::1
+2018-03-15T17:08:24.827922941 0.653546s notice: Listening on driver addresses: 127.0.0.1, ::1
+2018-03-15T17:08:24.827924421 0.653547s notice: Listening on http addresses: 127.0.0.1, ::1
+2018-03-15T17:08:24.827925979 0.653549s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2018-03-15T17:08:24.827927527 0.653551s notice: Server ready, "dotone_ml3" 02a55484-a0d6-463b-8a5e-75841253fcb1
+2018-03-15T17:08:25.878575532 1.704199s info: Table d99711d4-b0fb-4d19-ad40-1ff3b2d14624: Starting a new Raft election for term 5.
+2018-03-15T17:08:26.028471395 1.854095s info: Table d99711d4-b0fb-4d19-ad40-1ff3b2d14624: This server is Raft leader for term 5. Latest log index is 12.
+2018-03-15T17:08:26.186922484 2.012546s info: Table 67517593-fec3-44da-9994-78055e84ecb9: Starting a new Raft election for term 5.
+2018-03-15T17:08:26.449944670 2.275568s info: Table 67517593-fec3-44da-9994-78055e84ecb9: This server is Raft leader for term 5. Latest log index is 12.

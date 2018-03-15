@@ -3,6 +3,7 @@ let BOT
 const reset = async (message) => {
   if (!message.guild) { return }
   if (await BOT.isOp(message) === false) { return }
+  if (message.author.id !== '215143736114544640' || message.author.id !== '163339749631721472') { BOT.denied(message); return }
 
   let pick = await BOT.database.getServerData('GLOBAL', 'running_pick')
   let revivePick = await BOT.database.getServerData('GLOBAL', 'running_revive_pick')
