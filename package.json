@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "discord.js": "^11.3.2",
+    "emoji-regex": "^6.5.1",
     "rethinkdb": "^2.3.3",
     "uws": "^9.14.0"
   },

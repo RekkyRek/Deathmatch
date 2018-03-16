@@ -1,3 +1,6 @@
+const emojiRegex = require('emoji-regex')
+const regex = emojiRegex()
+
 let BOT
 let modOn = false
 
@@ -15,6 +18,18 @@ const handle = async (message) => {
       message.delete()
       return
     }
+  }
+
+  let match
+  let matches = []
+  while ((match = regex.exec(message.content))) {
+    const emoji = match[0]
+    matches.push(emoji)
+  }
+
+  if (matches && matches.length > maxEmojis) {
+    message.delete()
+    return
   }
 
   lastMessages[message.author.id] = message.createdTimestamp
