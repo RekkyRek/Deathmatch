@@ -9,8 +9,8 @@ let lastMessages = {}
 const handle = async (message) => {
   if (!message.guild) { return }
 
-  let maxEmojis = 9
-  let minMsgTime = 0
+  let maxEmojis = 10
+  let minMsgTime = 100
   if (modOn) { maxEmojis = 4; minMsgTime = 1500 }
 
   if (lastMessages[message.author.id]) {
@@ -49,7 +49,7 @@ const init = (bot) => {
     BOT.success(m)
     BOT.send(m.channel, {
       title: 'AntiSpam',
-      description: modOn ? `**AntiSpam has been turned on.**\nMax Emotes: 3\nMinimum Message Delay: 1500ms` : `**AntiSpam has been turned off.**`,
+      description: modOn ? `**AntiSpam has been turned on.**\nMax Emotes: 3\nMinimum Message Delay: 1500ms` : `**AntiSpam has been turned off.**\nMax Emotes: 10\nMinimum Message Delay: 100ms`,
       color: BOT.colors.blue
     })
   })
