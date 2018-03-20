@@ -106,6 +106,15 @@ const endPick = async (pick) => {
   winners.forEach(winner => {
     if (guild.members.get(winner)) {
       winnerStr += `${guild.members.get(winner).toString()}\n`
+      try {
+        BOT.send(guild.members.get(winner), {
+          title: 'You have been revived!',
+          description: 'Now get back on the feilds and start killing some people.',
+          color: BOT.color.blue
+        })
+      } catch (e) {
+        console.log(e)
+      }
     }
   })
 
