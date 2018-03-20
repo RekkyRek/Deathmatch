@@ -8,6 +8,7 @@ let lastMessages = {}
 
 const handle = async (message) => {
   if (!message.guild) { return }
+  if (message.author.id === BOT.client.user.id) { return }
 
   let maxEmojis = 10
   let minMsgTime = 100

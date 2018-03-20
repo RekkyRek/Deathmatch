@@ -10,9 +10,9 @@ const checkPick = async () => {
     if (new Date(pick.ends) < new Date()) {
       endPick(pick)
     } else {
-      let message = BOT.client.guilds.get(pick.guildID).channels.get(pick.channelID).messages.get(pick.messageID).catch(e => {})
+      let message = BOT.client.guilds.get(pick.guildID).channels.get(pick.channelID).messages.get(pick.messageID)
       if (message === undefined) {
-        message = await BOT.client.guilds.get(pick.guildID).channels.get(pick.channelID).fetchMessage(pick.messageID).catch(e => {})
+        message = await BOT.client.guilds.get(pick.guildID).channels.get(pick.channelID).fetchMessage(pick.messageID)
       }
       if (message === undefined) { return }
       let newEmbed = new Discord.RichEmbed(message.embeds[0])

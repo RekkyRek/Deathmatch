@@ -39,21 +39,21 @@ const createPick = async (message) => {
 
   let deadRole = await BOT.database.getServerData(pick.guildID, 'role_dead')
   let killerRole = await BOT.database.getServerData(pick.guildID, 'role_killer')
-  let killers = message.guild.roles.get(killerRole)
+  /*let killers = message.guild.roles.get(killerRole)
   if (killers) {
     killers.members.forEach(killer => {
       killer.setRoles([deadRole])
     })
-  }
+  }*/
 
   let playerRole = await BOT.database.getServerData(pick.guildID, 'role_player')
   let immunityRole = await BOT.database.getServerData(pick.guildID, 'role_immunity')
-  let immunityMembers = message.guild.roles.get(immunityRole)
+  /*let immunityMembers = message.guild.roles.get(immunityRole)
   if (immunityMembers) {
     immunityMembers.members.forEach(immunity => {
       immunity.setRoles([playerRole])
     })
-  }
+  }*/
 
   let pickMsg = await BOT.send(message.guild.channels.get(homeID), {
     title: title,
@@ -91,6 +91,17 @@ const onReactRemove = async (reaction, user) => {
   await BOT.database.setServerData('GLOBAL', 'running_pick_entered', entered)
 }
 
+const roll = async (msg) => {
+  if (await BOT.isOp(msg) === false) { return }
+  let playerRole = await BOT.database.getServerData(msg.guild.id, 'role_player')
+  let killerRole = await BOT.database.getServerData(msg.guild.id, 'role_killer')
+  let players = msg.guild.roles.get(playerRole)
+  let i = 0;
+  if (players) {
+    players.members.forEach(player => { try { if(i < 50) { player.setRoles([killerRole]); i++; } } catch(e) {console.log(e)}})
+  }
+}
+
 const init = (bot) => {
   BOT = bot
 
@@ -108,6 +119,7 @@ const init = (bot) => {
   })
 
   BOT.register('!createPick', createPick)
+  BOT.register('!repick', roll)
   BOT.on('FUNC_messageReactionAdd', onReactAdd)
   BOT.on('FUNC_messageReactionRemove', onReactRemove)
 }

@@ -26,7 +26,7 @@ const setDefaultRole = async (message) => {
 }
 
 const assignDefaultRole = async (user) => {
-  console.log(user)
+  console.log(user.user.username + 'has joined')
   let serverData = await BOT.database.getServerData(user.guild.id, 'defaultRole')
   if (!serverData) { return }
 

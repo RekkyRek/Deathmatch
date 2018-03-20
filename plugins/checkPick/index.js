@@ -10,10 +10,14 @@ const checkPick = async () => {
     if (new Date(pick.ends) < new Date()) {
       endPick(pick)
     } else {
-      let message = BOT.client.guilds.get(pick.guildID).channels.get(pick.channelID).messages.get(pick.messageID).catch(e => {})
+      //console.log(pick)
+      let message = BOT.client.guilds.get(pick.guildID).channels.get(pick.channelID).messages.get(pick.messageID)
+      //console.log('m1', message)
       if (message === undefined) {
-        message = await BOT.client.guilds.get(pick.guildID).channels.get(pick.channelID).fetchMessage(pick.messageID).catch(e => {})
+        //console.log('gey')
+        message = await BOT.client.guilds.get(pick.guildID).channels.get(pick.channelID).fetchMessage(pick.messageID)
       }
+      //console.log('m', message)
       if (message === undefined) { return }
       let newEmbed = new Discord.RichEmbed(message.embeds[0])
       let dur = moment.duration(new Date(pick.ends) - new Date())
@@ -23,10 +27,13 @@ const checkPick = async () => {
       }
       message.edit(newEmbed).catch(e => {})
     }
-  } catch (e) {}
+  } catch (e) {
+    console.log(e)
+  }
 }
 
 const endPick = async (pick) => {
+  console.log(pick)
   let guild = BOT.client.guilds.get(pick.guildID)
   let message = guild.channels.get(pick.channelID).messages.get(pick.messageID)
   if (message === undefined) {
@@ -47,15 +54,24 @@ const endPick = async (pick) => {
     return
   }
 
-  killerRole = guild.roles.get(killerRole)
-
   let playerRole = await BOT.database.getServerData(pick.guildID, 'role_player')
-  let killers = message.guild.roles.get(playerRole)
+
+  let deadRole = await BOT.database.getServerData(pick.guildID, 'role_dead')
+  let killers = message.guild.roles.get(killerRole)
   if (killers) {
     killers.members.forEach(killer => {
-      killer.setRoles([playerRole])
+      killer.setRoles([deadRole])
     })
   }
+
+  let immunityRole = await BOT.database.getServerData(pick.guildID, 'role_immunity')
+  let immunityMembers = message.guild.roles.get(immunityRole)
+  if (immunityMembers) {
+    immunityMembers.members.forEach(immunity => {
+      immunity.setRoles([playerRole])
+    })
+  }
+
 
   let raffle = []
   let entered = await BOT.database.getServerData('GLOBAL', 'running_pick_entered')
@@ -98,20 +114,20 @@ const endPick = async (pick) => {
   console.log('winners', winners)
 
   winners.forEach(winner => {
-    console.log(guild.members.get(winner).toString())
-    guild.members.get(winner).setRoles([killerRole]).catch(e => console.log(e))
+    try {
+      console.log('winner', guild.members.get(winner).toString())
+      guild.members.get(winner).setRoles([killerRole])
+    } catch(e) {console.log(e)}
   })
 
-  let winnerStr = ``
+  let winnerStr = `Winners:\n`
   winners.forEach(winner => {
-    winnerStr += `${guild.members.get(winner).toString()}\n`
+    if(guild.members.get(winner)) {
+      winnerStr += `${guild.members.get(winner).toString()}\n`
+    }
   })
 
-  BOT.send(BOT.client.guilds.get(pick.guildID).channels.get(pick.channelID), {
-    title: 'Winners',
-    description: winnerStr,
-    color: BOT.colors.blue
-  })
+  BOT.client.guilds.get(pick.guildID).channels.get(pick.channelID).send(winnerStr)
 
   // let reactionUsers = message.reactions.get('🎉').users.array()
   // let winner = reactionUsers[Math.floor(Math.random() * reactionUsers.length)]

@@ -15,5 +15,6 @@
   { "name": "reset", "entry": "index.js", "enabled": true },
   { "name": "ban", "entry": "index.js", "enabled": true },
   { "name": "memeWin", "entry": "index.js", "enabled": true },
-  { "name": "antiSpam", "entry": "index.js", "enabled": true }
+  { "name": "antiSpam", "entry": "index.js", "enabled": true },
+  { "name": "nsfw", "entry": "index.js", "enabled": true }
 ]
