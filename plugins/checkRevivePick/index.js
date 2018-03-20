@@ -10,10 +10,14 @@ const checkPick = async () => {
     if (new Date(pick.ends) < new Date()) {
       endPick(pick)
     } else {
+      // console.log(pick)
       let message = BOT.client.guilds.get(pick.guildID).channels.get(pick.channelID).messages.get(pick.messageID)
+      // console.log('m1', message)
       if (message === undefined) {
+        // console.log('gey')
         message = await BOT.client.guilds.get(pick.guildID).channels.get(pick.channelID).fetchMessage(pick.messageID)
       }
+      // console.log('m', message)
       if (message === undefined) { return }
       let newEmbed = new Discord.RichEmbed(message.embeds[0])
       let dur = moment.duration(new Date(pick.ends) - new Date())
@@ -23,10 +27,13 @@ const checkPick = async () => {
       }
       message.edit(newEmbed).catch(e => {})
     }
-  } catch (e) {}
+  } catch (e) {
+    console.log(e)
+  }
 }
 
 const endPick = async (pick) => {
+  console.log(pick)
   let guild = BOT.client.guilds.get(pick.guildID)
   let message = guild.channels.get(pick.channelID).messages.get(pick.messageID)
   if (message === undefined) {
@@ -46,8 +53,6 @@ const endPick = async (pick) => {
     })
     return
   }
-
-  deadRole = guild.roles.get(deadRole)
 
   let raffle = []
   let entered = await BOT.database.getServerData('GLOBAL', 'running_revive_pick_entered')
@@ -71,7 +76,7 @@ const endPick = async (pick) => {
 
   if (raffle.length < pick.amountWinners) {
     BOT.send(BOT.client.guilds.get(pick.guildID).channels.get(pick.channelID), {
-      title: 'Raffle Error',
+      title: 'Jeff',
       description: `Not enough users entered`,
       color: BOT.colors.red
     })
@@ -90,22 +95,21 @@ const endPick = async (pick) => {
   console.log('winners', winners)
 
   let playerRole = await BOT.database.getServerData(pick.guildID, 'role_player')
-
   winners.forEach(winner => {
-    console.log(guild.members.get(winner).toString())
-    guild.members.get(winner).setRoles(playerRole).catch(e => console.log(e))
+    try {
+      console.log('winner', guild.members.get(winner).toString())
+      guild.members.get(winner).setRoles([playerRole])
+    } catch (e) { console.log(e) }
   })
 
-  let winnerStr = ``
+  let winnerStr = `Winners:\n`
   winners.forEach(winner => {
-    winnerStr += `${guild.members.get(winner).toString()}\n`
+    if (guild.members.get(winner)) {
+      winnerStr += `${guild.members.get(winner).toString()}\n`
+    }
   })
 
-  BOT.send(BOT.client.guilds.get(pick.guildID).channels.get(pick.channelID), {
-    title: 'Winners',
-    description: winnerStr,
-    color: BOT.colors.blue
-  })
+  BOT.client.guilds.get(pick.guildID).channels.get(pick.channelID).send(winnerStr)
 
   // let reactionUsers = message.reactions.get('🎉').users.array()
   // let winner = reactionUsers[Math.floor(Math.random() * reactionUsers.length)]
