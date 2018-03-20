@@ -55,11 +55,11 @@ const memeban = async (message) => {
 
   try {
     let meme = await BOT.send(message.channel, {
-      title: `Banned ${toBan.username}`,
+      title: `Banned ${toBan.user.username}`,
       description: `Reason: ${reason}`,
       color: BOT.colors.green
     })
-    setTimeout(() => { meme.delete() }, 3000)
+    setTimeout(() => { meme.delete() }, 5000)
     message.delete()
   } catch (e) {}
 
