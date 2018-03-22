@@ -6,6 +6,7 @@ const kill = async (message) => {
   let deadRole = await BOT.database.getServerData(message.guild.id, 'role_dead')
   let playerRole = await BOT.database.getServerData(message.guild.id, 'role_player')
   let immunityRole = await BOT.database.getServerData(message.guild.id, 'role_immunity')
+  let nsfwRole = await BOT.database.getServerData(message.guild.id, 'role_nsfw')
   if (!killerRole || !deadRole || !playerRole) {
     return
   }
@@ -22,7 +23,7 @@ const kill = async (message) => {
   }
   toKill = await message.guild.members.get(toKill.id)
   console.log('toKill', toKill.id)
-  if (!toKill) { try { toKill = await message.guild.fetchMember(message.mentions.users.array()[0]) } catch(e) {console.log(e)} }
+  if (!toKill) { try { toKill = await message.guild.fetchMember(message.mentions.users.array()[0]) } catch (e) { console.log(e) } }
   let error
   console.log('toKill', toKill.id)
 
@@ -71,9 +72,9 @@ const kill = async (message) => {
     }
   }
 
-  toKill.setRoles([deadRole])
+  toKill.setRoles(toKill.roles.get(nsfwRole) ? [deadRole, nsfwRole] : [deadRole])
   if (toKill.user.id !== message.member.user.id) {
-    message.member.setRoles([playerRole, immunityRole])
+    message.member.setRoles(message.member.roles.get(nsfwRole) ? [playerRole, immunityRole, nsfwRole] : [playerRole, immunityRole])
   }
   try {
     BOT.send(message.author, {
@@ -88,7 +89,7 @@ closed.`,
       description: `Someone shot ya in the back o the neck.\nDon't loose hope though, you can still be revived by entering the revival pick!`,
       color: BOT.colors.gray
     })
-  } catch(e) { console.log(e)}
+  } catch (e) { console.log(e) }
 
   message.delete()
 }

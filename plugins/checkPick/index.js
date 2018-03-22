@@ -10,14 +10,14 @@ const checkPick = async () => {
     if (new Date(pick.ends) < new Date()) {
       endPick(pick)
     } else {
-      //console.log(pick)
+      // console.log(pick)
       let message = BOT.client.guilds.get(pick.guildID).channels.get(pick.channelID).messages.get(pick.messageID)
-      //console.log('m1', message)
+      // console.log('m1', message)
       if (message === undefined) {
-        //console.log('gey')
+        // console.log('gey')
         message = await BOT.client.guilds.get(pick.guildID).channels.get(pick.channelID).fetchMessage(pick.messageID)
       }
-      //console.log('m', message)
+      // console.log('m', message)
       if (message === undefined) { return }
       let newEmbed = new Discord.RichEmbed(message.embeds[0])
       let dur = moment.duration(new Date(pick.ends) - new Date())
@@ -55,12 +55,13 @@ const endPick = async (pick) => {
   }
 
   let playerRole = await BOT.database.getServerData(pick.guildID, 'role_player')
+  let nsfwRole = await BOT.database.getServerData(pick.guildID, 'role_nsfw')
 
   let deadRole = await BOT.database.getServerData(pick.guildID, 'role_dead')
   let killers = message.guild.roles.get(killerRole)
   if (killers) {
     killers.members.forEach(killer => {
-      killer.setRoles([deadRole])
+      try { killer.setRoles(killer.roles.get(nsfwRole) ? [deadRole, nsfwRole] : [deadRole]) } catch (e) {}
     })
   }
 
@@ -68,10 +69,9 @@ const endPick = async (pick) => {
   let immunityMembers = message.guild.roles.get(immunityRole)
   if (immunityMembers) {
     immunityMembers.members.forEach(immunity => {
-      immunity.setRoles([playerRole])
+      try { immunity.setRoles(immunity.roles.get(nsfwRole) ? [playerRole, nsfwRole] : [playerRole]) } catch (e) {}
     })
   }
-
 
   let raffle = []
   let entered = await BOT.database.getServerData('GLOBAL', 'running_pick_entered')
@@ -116,13 +116,13 @@ const endPick = async (pick) => {
   winners.forEach(winner => {
     try {
       console.log('winner', guild.members.get(winner).toString())
-      guild.members.get(winner).setRoles([killerRole])
-    } catch(e) {console.log(e)}
+      guild.members.get(winner).setRoles(guild.members.get(winner).roles.get(nsfwRole) ? [killerRole, nsfwRole] : [killerRole])
+    } catch (e) { console.log(e) }
   })
 
   let winnerStr = `Winners:\n`
   winners.forEach(winner => {
-    if(guild.members.get(winner)) {
+    if (guild.members.get(winner)) {
       winnerStr += `${guild.members.get(winner).toString()}\n`
     }
   })

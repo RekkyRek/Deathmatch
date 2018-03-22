@@ -10,6 +10,8 @@ const reset = async (message) => {
 
   let guild = BOT.client.guilds.get(pick.guildID)
 
+  let nsfwRole = await BOT.database.getServerData(message.guild.id, 'role_nsfw')
+
   try {
     let pickMsg = await guild.channels.get(pick.channelID).fetchMessage(pick.messageID)
     pickMsg.delete()
@@ -36,7 +38,7 @@ const reset = async (message) => {
   if (deadPlayers) {
     deadPlayers.members.forEach(dead => {
       console.log('dead')
-      dead.setRoles([playerRole])
+      dead.setRoles(dead.roles.get(nsfwRole) ? [playerRole, nsfwRole] : [playerRole])
     })
   }
 

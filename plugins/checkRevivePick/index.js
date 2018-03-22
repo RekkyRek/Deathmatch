@@ -2,6 +2,26 @@ let BOT
 
 const Discord = require('discord.js')
 const moment = require('moment')
+const request = require('request')
+
+const getLeaderboard = async () => {
+  return new Promise((resolve, reject) => {
+    var jar = request.jar()
+    jar.setCookie(request.cookie('__cfduid=d498707740b9b2095ed6c8388aa69817e1521733736'), 'https://api.tatsumaki.xyz/guilds/421082803669827584/leaderboard')
+
+    var options = {
+      method: 'GET',
+      url: 'https://api.tatsumaki.xyz/guilds/421082803669827584/leaderboard',
+      headers: { authorization: '1fba6ca10aba9f03899c250e3e803143-35dc883356a4d1-494708f026b56aa957d1924fab7c7dae' },
+      jar: 'JAR'
+    }
+
+    request(options, function (error, response, body) {
+      if (error) throw new Error(error)
+      resolve(JSON.parse(body))
+    })
+  })
+}
 
 const checkPick = async () => {
   try {
@@ -54,6 +74,10 @@ const endPick = async (pick) => {
     return
   }
 
+  let nsfwRole = await BOT.database.getServerData(pick.guildID, 'role_nsfw')
+
+  let leaderboard = await getLeaderboard()
+
   let raffle = []
   let entered = await BOT.database.getServerData('GLOBAL', 'running_revive_pick_entered')
   entered.users[BOT.client.user.id] = { entered: false }
@@ -61,8 +85,10 @@ const endPick = async (pick) => {
   console.log(entered.users)
 
   Object.keys(entered.users).forEach(key => {
-    console.log(key)
-    if (entered.users[key].entered) {
+    let user = leaderboard.find(function (user) {
+      return user.user_id === key
+    })
+    if (entered.users[key].entered && user.rank <= 150) {
       raffle.push(key)
     }
   })
@@ -98,7 +124,7 @@ const endPick = async (pick) => {
   winners.forEach(winner => {
     try {
       console.log('winner', guild.members.get(winner).toString())
-      guild.members.get(winner).setRoles([playerRole])
+      guild.members.get(winner).setRoles(guild.members.get(winner).roles.get(nsfwRole) ? [playerRole, nsfwRole] : [playerRole])
     } catch (e) { console.log(e) }
   })
 

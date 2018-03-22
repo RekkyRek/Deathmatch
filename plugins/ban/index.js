@@ -59,7 +59,7 @@ const memeban = async (message) => {
       description: `Reason: ${reason}`,
       color: BOT.colors.green
     })
-    setTimeout(() => { meme.delete() }, 5000)
+    setTimeout(() => { meme.delete() }, 7500)
     message.delete()
   } catch (e) {}
 
