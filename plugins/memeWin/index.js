@@ -16,8 +16,6 @@ const memeWin = async (message) => {
 const ami = async (message) => {
   if (!message.guild) { return }
 
-  if (message.content.indexOf('?') === -1) { return }
-
   if (Math.random() > 0.66) {
     BOT.success(message)
   } else {
