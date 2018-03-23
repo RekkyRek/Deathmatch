@@ -55,21 +55,25 @@ const endPick = async (pick) => {
   }
 
   let playerRole = await BOT.database.getServerData(pick.guildID, 'role_player')
-  let nsfwRole = await BOT.database.getServerData(pick.guildID, 'role_nsfw')
 
   let deadRole = await BOT.database.getServerData(pick.guildID, 'role_dead')
   let killers = message.guild.roles.get(killerRole)
   if (killers) {
     killers.members.forEach(killer => {
-      try { killer.setRoles(killer.roles.get(nsfwRole) ? [deadRole, nsfwRole] : [deadRole]) } catch (e) {}
+      try {
+        killer.addRole(deadRole)
+        killer.removeRole(killerRole)
+      } catch (e) {}
     })
   }
 
   let immunityRole = await BOT.database.getServerData(pick.guildID, 'role_immunity')
   let immunityMembers = message.guild.roles.get(immunityRole)
   if (immunityMembers) {
-    immunityMembers.members.forEach(immunity => {
-      try { immunity.setRoles(immunity.roles.get(nsfwRole) ? [playerRole, nsfwRole] : [playerRole]) } catch (e) {}
+    await immunityMembers.members.forEach(async (immunity) => {
+      try {
+        immunity.removeRole(immunityRole)
+      } catch (e) {}
     })
   }
 
@@ -113,10 +117,13 @@ const endPick = async (pick) => {
 
   console.log('winners', winners)
 
-  winners.forEach(winner => {
+  await winners.forEach(async (winner) => {
     try {
       console.log('winner', guild.members.get(winner).toString())
-      guild.members.get(winner).setRoles(guild.members.get(winner).roles.get(nsfwRole) ? [killerRole, nsfwRole] : [killerRole])
+      let wuser = guild.members.get(winner)
+      if (!wuser) { wuser = await guild.fetchMember(winner) }
+      wuser.removeRole(playerRole)
+      wuser.addRole(killerRole)
     } catch (e) { console.log(e) }
   })
 

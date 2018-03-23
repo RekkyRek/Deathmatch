@@ -53,7 +53,6 @@ const checkPick = async () => {
 }
 
 const endPick = async (pick) => {
-  console.log(pick)
   let guild = BOT.client.guilds.get(pick.guildID)
   let message = guild.channels.get(pick.channelID).messages.get(pick.messageID)
   if (message === undefined) {
@@ -85,8 +84,9 @@ const endPick = async (pick) => {
   console.log(entered.users)
 
   Object.keys(entered.users).forEach(key => {
-    let user = leaderboard.find(function (user) {
-      return user.user_id === key
+    let user = leaderboard.find(function (u) {
+      if (!u) { return false }
+      return u.user_id === key.id
     })
     if (entered.users[key].entered && user.rank <= 200) {
       raffle.push(key)
@@ -121,10 +121,12 @@ const endPick = async (pick) => {
   console.log('winners', winners)
 
   let playerRole = await BOT.database.getServerData(pick.guildID, 'role_player')
-  winners.forEach(winner => {
+  await winners.forEach(async (winner) => {
     try {
       console.log('winner', guild.members.get(winner).toString())
-      guild.members.get(winner).setRoles(guild.members.get(winner).roles.get(nsfwRole) ? [playerRole, nsfwRole] : [playerRole])
+      let wuser = guild.members.get(winner)
+      if (!wuser) { wuser = await guild.fetchMember(winner) }
+      wuser.setRoles(wuser.roles.get(nsfwRole) ? [playerRole, nsfwRole] : [playerRole])
     } catch (e) { console.log(e) }
   })
 
@@ -135,7 +137,7 @@ const endPick = async (pick) => {
       try {
         BOT.send(guild.members.get(winner), {
           title: 'You have been revived!',
-          description: 'Now get back on the feilds and start killing some people.',
+          description: 'Now get back on the feild and start killing some people!',
           color: BOT.color.blue
         })
       } catch (e) {
@@ -145,10 +147,6 @@ const endPick = async (pick) => {
   })
 
   BOT.client.guilds.get(pick.guildID).channels.get(pick.channelID).send(winnerStr)
-
-  // let reactionUsers = message.reactions.get('🎉').users.array()
-  // let winner = reactionUsers[Math.floor(Math.random() * reactionUsers.length)]
-  // console.log(reactionUsers)
 }
 
 const init = (bot) => {
