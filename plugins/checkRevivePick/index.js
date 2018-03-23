@@ -88,7 +88,7 @@ const endPick = async (pick) => {
     let user = leaderboard.find(function (user) {
       return user.user_id === key
     })
-    if (entered.users[key].entered && user.rank <= 150) {
+    if (entered.users[key].entered && user.rank <= 200) {
       raffle.push(key)
     }
   })
