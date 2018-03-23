@@ -72,9 +72,11 @@ const kill = async (message) => {
     }
   }
 
-  toKill.setRoles(toKill.roles.get(nsfwRole) ? [deadRole, nsfwRole] : [deadRole])
+  toKill.addRole(deadRole)
+  toKill.removeRole(playerRole)
   if (toKill.user.id !== message.member.user.id) {
-    message.member.setRoles(message.member.roles.get(nsfwRole) ? [playerRole, immunityRole, nsfwRole] : [playerRole, immunityRole])
+    message.member.addRoles([playerRole, immunityRole])
+    message.member.removeRole([killerRole])
   }
   try {
     BOT.send(message.author, {
