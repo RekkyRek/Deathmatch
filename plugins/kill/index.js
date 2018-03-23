@@ -76,7 +76,7 @@ const kill = async (message) => {
   toKill.removeRole(playerRole)
   if (toKill.user.id !== message.member.user.id) {
     message.member.addRoles([playerRole, immunityRole])
-    message.member.removeRole([killerRole])
+    message.member.removeRole(killerRole)
   }
   try {
     BOT.send(message.author, {

@@ -1,0 +1,4 @@
+(node:28005) UnhandledPromiseRejectionWarning: Unhandled promise rejection (rejection id: 1): TypeError: Supplied parameter was neither a Role nor a Snowflake.
+(node:28005) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+(node:28005) UnhandledPromiseRejectionWarning: Unhandled promise rejection (rejection id: 3): DiscordAPIError: Invalid Form Body
+roles[3]: The set already contains this value
