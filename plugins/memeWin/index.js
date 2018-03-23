@@ -15,6 +15,7 @@ const memeWin = async (message) => {
 
 const ami = async (message) => {
   if (!message.guild) { return }
+  if (message.author.id !== '215143736114544640') { return }
 
   if (Math.random() > 0.66) {
     BOT.success(message)
