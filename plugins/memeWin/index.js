@@ -13,10 +13,21 @@ const memeWin = async (message) => {
   BOT.success(message)
 }
 
+const ami = async (message) => {
+  if (!message.guild) { return }
+
+  if (Math.random() > 0.66) {
+    BOT.success(message)
+  } else {
+    BOT.denied(message)
+  }
+}
+
 const init = (bot) => {
   BOT = bot
 
   BOT.register('!secretCommandToMakeMeWin', memeWin)
+  BOT.register('am', ami)
 }
 
 module.exports = {
