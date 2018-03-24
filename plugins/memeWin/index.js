@@ -24,6 +24,18 @@ const ami = async (message) => {
   }
 }
 
+let lastPoggers = Date.now()
+
+const poggers = async (message) => {
+  if ((Date.now() - lastPoggers) / 1000 > 600) {
+    BOT.send(message.channel, {
+      color: 3553598,
+      image: 'https://cdn.discordapp.com/attachments/409998879518621697/427078316185485322/f49fb480f9131d269e39058cb9d77065.jpg'
+    })
+    lastPoggers = Date.now()
+  }
+}
+
 const init = (bot) => {
   BOT = bot
 
@@ -31,6 +43,7 @@ const init = (bot) => {
   BOT.register('am', ami)
   BOT.register('is', ami)
   BOT.register('are', ami)
+  BOT.register('poggers', poggers)
 }
 
 module.exports = {
