@@ -84,13 +84,15 @@ const endPick = async (pick) => {
   console.log(entered.users)
 
   Object.keys(entered.users).forEach(key => {
-    let user = leaderboard.find(function (u) {
-      if (!u) { return false }
-      return u.user_id === key.id
-    })
-    if (entered.users[key].entered && user.rank <= 200) {
-      raffle.push(key)
-    }
+    try {
+      let user = leaderboard.find(function (u) {
+        if (!u) { return false }
+        return u.user_id === key.id
+      })
+      if (entered.users[key].entered && user.rank <= 200) {
+        raffle.push(key)
+      }
+    } catch (e) {}
   })
 
   console.log(raffle)
