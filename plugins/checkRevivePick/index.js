@@ -18,7 +18,7 @@ const getLeaderboard = async () => {
 
     request(options, function (error, response, body) {
       if (error) throw new Error(error)
-      resolve(JSON.parse(body))
+      try { resolve(JSON.parse(body)) } catch(e) { resolve({err: e}) }
     })
   })
 }
@@ -30,14 +30,10 @@ const checkPick = async () => {
     if (new Date(pick.ends) < new Date()) {
       endPick(pick)
     } else {
-      // console.log(pick)
       let message = BOT.client.guilds.get(pick.guildID).channels.get(pick.channelID).messages.get(pick.messageID)
-      // console.log('m1', message)
       if (message === undefined) {
-        // console.log('gey')
         message = await BOT.client.guilds.get(pick.guildID).channels.get(pick.channelID).fetchMessage(pick.messageID)
       }
-      // console.log('m', message)
       if (message === undefined) { return }
       let newEmbed = new Discord.RichEmbed(message.embeds[0])
       let dur = moment.duration(new Date(pick.ends) - new Date())
@@ -75,7 +71,6 @@ const endPick = async (pick) => {
 
   let nsfwRole = await BOT.database.getServerData(pick.guildID, 'role_nsfw')
 
-  let leaderboard = await getLeaderboard()
 
   let raffle = []
   let entered = await BOT.database.getServerData('GLOBAL', 'running_revive_pick_entered')
@@ -83,19 +78,23 @@ const endPick = async (pick) => {
 
   console.log(entered.users)
 
-  Object.keys(entered.users).forEach(key => {
-    try {
-      let user = leaderboard.find(function (u) {
-        if (!u) { return false }
-        return u.user_id === key.id
-      })
-      if (entered.users[key].entered && user.rank <= 200) {
-        raffle.push(key)
-      }
-    } catch (e) {}
-  })
+  let leaderboard = await getLeaderboard()
+  if (!leaderboard.err) {
+    Object.keys(entered.users).forEach(key => {
+      try {
+        let user = leaderboard.find(function (u) {
+          if (!u) { return false }
+          return u.user_id === key.id
+        })
+        if (entered.users[key].entered && user.rank <= 200) {
+          raffle.push(key)
+        }
+      } catch (e) {}
+    })
+  } else {
+    raffle = entered
+  }
 
-  console.log(raffle)
   // Shuffle Array for extra randomness
   for (let i = raffle.length - 1; i > 0; i--) {
     let j = Math.floor(Math.random() * (i + 1));
@@ -111,7 +110,6 @@ const endPick = async (pick) => {
     return
   }
 
-  console.log(raffle)
   let winners = []
   for (let i = 0; i < pick.amountWinners; i++) {
     let winner = raffle[Math.floor(Math.random() * raffle.length)]
