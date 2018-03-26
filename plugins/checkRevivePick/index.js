@@ -17,8 +17,8 @@ const getLeaderboard = async () => {
     }
 
     request(options, function (error, response, body) {
-      if (error) throw new Error(error)
-      try { resolve(JSON.parse(body)) } catch(e) { resolve({err: e}) }
+      if (error) resolve({error})
+      try { resolve(JSON.parse(body)) } catch(e) { resolve({error: e}) }
     })
   })
 }
@@ -79,7 +79,7 @@ const endPick = async (pick) => {
   console.log(entered.users)
 
   let leaderboard = await getLeaderboard()
-  if (!leaderboard.err) {
+  if (!leaderboard.error) {
     Object.keys(entered.users).forEach(key => {
       try {
         let user = leaderboard.find(function (u) {
