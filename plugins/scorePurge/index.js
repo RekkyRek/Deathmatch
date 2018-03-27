@@ -65,7 +65,7 @@ const endPick = async (message) => {
     }
   })
 
-  console.log(members.members.length, test.length)
+  console.log(Array.from(members.members).length, test.length)
 }
 
 const init = (bot) => {
