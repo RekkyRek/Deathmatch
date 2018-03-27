@@ -53,7 +53,9 @@ const endPick = async (message) => {
 
   let members = await message.guild.fetchMembers()
 
-  members.forEach(member => {
+  console.log(members.members)
+
+  members.members.forEach(member => {
     if (member.roles.get(playerRole)) {
       if (userscores[member.id]) {
         console.log(member.id, userscores[member.id])
