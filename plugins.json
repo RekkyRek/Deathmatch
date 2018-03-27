@@ -17,5 +17,6 @@
   { "name": "memeWin", "entry": "index.js", "enabled": true },
   { "name": "antiSpam", "entry": "index.js", "enabled": true },
   { "name": "nsfw", "entry": "index.js", "enabled": true },
-  { "name": "devPick", "entry": "index.js", "enabled": true }
+  { "name": "devPick", "entry": "index.js", "enabled": true },
+  { "name": "scorePrune", "entry": "index.js", "enabled": true }
 ]
