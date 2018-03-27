@@ -70,7 +70,7 @@ const endPick = async (message) => {
 
   members.members.forEach(member => {
     if (member.roles.get(playerRole)) {
-      if (userscores[member.id] && userscores[member.id] <= minScore) {
+      if (userscores[member.id] && userscores[member.id] > minScore) {
         test.push(member.id, userscores[member.id])
       }
     }
