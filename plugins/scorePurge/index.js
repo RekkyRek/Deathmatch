@@ -55,13 +55,17 @@ const endPick = async (message) => {
 
   console.log(members.members)
 
+  let test = []
+
   members.members.forEach(member => {
     if (member.roles.get(playerRole)) {
       if (userscores[member.id]) {
-        console.log(member.id, userscores[member.id])
+        test.push(member.id, userscores[member.id])
       }
     }
   })
+
+  console.log(members.members.length, test.length)
 }
 
 const init = (bot) => {
