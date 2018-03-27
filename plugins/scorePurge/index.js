@@ -26,6 +26,17 @@ const endPick = async (message) => {
   if (!message.guild) { return }
   if (await BOT.isOp(message) === false) { return }
 
+  let minScore = message.content.split(' ')[1]
+
+  if (!minScore) {
+    BOT.send(message.channel, {
+      title: 'Usage Error',
+      description: `Usage \`!scorePrune <Minimum Score>\``,
+      color: BOT.colors.red
+    })
+    return
+  }
+
   let deadRole = await BOT.database.getServerData(message.guild.id, 'role_dead')
   if (deadRole === undefined) {
     BOT.send(message.channel, {
@@ -59,7 +70,7 @@ const endPick = async (message) => {
 
   members.members.forEach(member => {
     if (member.roles.get(playerRole)) {
-      if (userscores[member.id]) {
+      if (userscores[member.id] && userscores[member.id] <= minScore) {
         test.push(member.id, userscores[member.id])
       }
     }
