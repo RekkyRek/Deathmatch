@@ -26,7 +26,7 @@ const endPick = async (message) => {
   if (!message.guild) { return }
   if (await BOT.isOp(message) === false) { return }
 
-  let deadRole = await BOT.database.getServerData(pick.guildID, 'role_dead')
+  let deadRole = await BOT.database.getServerData(message.guild.id, 'role_dead')
   if (deadRole === undefined) {
     BOT.send(message.channel, {
       title: 'Usage Error',
@@ -36,7 +36,7 @@ const endPick = async (message) => {
     return
   }
 
-  let playerRole = await BOT.database.getServerData(pick.guildID, 'role_player')
+  let playerRole = await BOT.database.getServerData(message.guild.id, 'role_player')
   let roleData = message.guild.roles.get(playerRole)
 
   let leaderboard = await getLeaderboard()
@@ -56,8 +56,6 @@ const endPick = async (message) => {
       console.log(member.id, userscores[member.id])
     }
   })
-
-  BOT.client.guilds.get(pick.guildID).channels.get(pick.channelID).send(winnerStr)
 }
 
 const init = (bot) => {
