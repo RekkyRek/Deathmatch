@@ -64,14 +64,13 @@ const endPick = async (message) => {
 
   let members = await message.guild.fetchMembers()
 
-  console.log(members.members)
-
   let test = []
 
   members.members.forEach(member => {
+    console.log(member.roles.get(playerRole))
     if (member.roles.get(playerRole)) {
       if (userscores[member.id] && userscores[member.id] <= minScore) {
-        test.push(member.id, userscores[member.id])
+
       }
     }
   })
