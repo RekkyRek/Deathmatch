@@ -69,9 +69,6 @@ const endPick = async (pick) => {
     return
   }
 
-  let nsfwRole = await BOT.database.getServerData(pick.guildID, 'role_nsfw')
-
-
   let raffle = []
   let entered = await BOT.database.getServerData('GLOBAL', 'running_revive_pick_entered')
   entered.users[BOT.client.user.id] = { entered: false }
@@ -92,7 +89,9 @@ const endPick = async (pick) => {
       } catch (e) {}
     })
   } else {
-    raffle = entered
+    Object.keys(entered.users).forEach(key => {
+      raffle.push(key)
+    })
   }
 
   // Shuffle Array for extra randomness
@@ -126,7 +125,8 @@ const endPick = async (pick) => {
       console.log('winner', guild.members.get(winner).toString())
       let wuser = guild.members.get(winner)
       if (!wuser) { wuser = await guild.fetchMember(winner) }
-      wuser.setRoles(wuser.roles.get(nsfwRole) ? [playerRole, nsfwRole] : [playerRole])
+      wuser.addRole(playerRole)
+      wuser.removeRole(deadRole)
     } catch (e) { console.log(e) }
   })
 
