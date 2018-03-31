@@ -18,7 +18,7 @@ const getLeaderboard = async () => {
 
     request(options, function (error, response, body) {
       if (error) resolve({error})
-      try { resolve(JSON.parse(body)) } catch(e) { resolve({error: e}) }
+      try { resolve(JSON.parse(body)) } catch (e) { resolve({error: e}) }
     })
   })
 }
@@ -80,15 +80,23 @@ const endPick = async (pick) => {
     Object.keys(entered.users).forEach(key => {
       try {
         let user = leaderboard.find(function (u) {
-          if (!u) { return false }
+          if (!u || u === null) { return false }
           return u.user_id === key.id
         })
-        if (entered.users[key].entered && user.rank <= 200) {
+        if (user && entered.users[key].entered && user.rank <= 200) {
           raffle.push(key)
         }
-      } catch (e) {}
+      } catch (e) {
+        raffle.push(key)
+      }
     })
   } else {
+    Object.keys(entered.users).forEach(key => {
+      raffle.push(key)
+    })
+  }
+
+  if (raffle.length < pick.amountWinners) {
     Object.keys(entered.users).forEach(key => {
       raffle.push(key)
     })

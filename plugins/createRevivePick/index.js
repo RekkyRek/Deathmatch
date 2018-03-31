@@ -68,7 +68,7 @@ const onReactAdd = async (reaction, user) => {
 const onReactRemove = async (reaction, user) => {
   if (reaction.message.id !== pick.messageID) { return }
 
-  entered[user.id] = { entered: false }
+  entered.users[user.id] = { entered: false }
   console.log(entered)
   await BOT.database.setServerData('GLOBAL', 'running_revive_pick_entered', entered)
 }
