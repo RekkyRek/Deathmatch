@@ -128,12 +128,14 @@ const endPick = async (pick) => {
   console.log('winners', winners)
 
   let playerRole = await BOT.database.getServerData(pick.guildID, 'role_player')
+  let immunityRole = await BOT.database.getServerData(pick.guildID, 'role_immunity')
   await winners.forEach(async (winner) => {
     try {
       console.log('winner', guild.members.get(winner).toString())
       let wuser = guild.members.get(winner)
       if (!wuser) { wuser = await guild.fetchMember(winner) }
       wuser.addRole(playerRole)
+      wuser.addRole(immunityRole)
       wuser.removeRole(deadRole)
     } catch (e) { console.log(e) }
   })

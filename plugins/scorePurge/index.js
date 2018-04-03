@@ -17,7 +17,7 @@ const getLeaderboard = async () => {
 
     request(options, function (error, response, body) {
       if (error) resolve({error})
-      try { resolve(JSON.parse(body)) } catch(e) { resolve({error: e}) }
+      try { resolve(JSON.parse(body)) } catch (e) { resolve({error: e}) }
     })
   })
 }
@@ -54,7 +54,7 @@ const endPick = async (message) => {
   let userscores = {}
   if (!leaderboard.error) {
     leaderboard.forEach(key => {
-      if(key) {
+      if (key) {
         userscores[key.user_id] = key.score
       }
     })
@@ -71,7 +71,7 @@ const endPick = async (message) => {
     if (member.roles.has(playerRole)) {
       if (!userscores[member.id]) { userscores[member.id] = 0 }
       if (userscores[member.id] <= minScore) {
-        test.push({id: member.id, score: userscores[member.id] })
+        test.push({ id: member.id, score: userscores[member.id] })
       }
     }
   })
