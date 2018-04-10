@@ -21,26 +21,24 @@ const reset = async (message) => {
   }
 
   let playerRole = await BOT.database.getServerData(pick.guildID, 'role_player')
-  let killerRole = await BOT.database.getServerData(pick.guildID, 'role_killer')
-  let killers = message.guild.roles.get(killerRole)
+  let killerRole = await BOT.database.getServerData(pick.guildID, 'role_killer') */
+  /* let killers = message.guild.roles.get(killerRole)
   if (killers) {
     killers.members.forEach(killer => {
       console.log('killer')
       killer.setRoles([playerRole])
     })
-  }
+  } */
 
-  let deadRole = await BOT.database.getServerData(pick.guildID, 'role_dead')
+  let deadRole = await BOT.database.getServerData(message.guild.id, 'role_dead')
 
   let deadPlayers = message.guild.roles.get(deadRole)
   if (deadPlayers) {
     deadPlayers.members.forEach(dead => {
       console.log('dead')
-      dead.setRoles([playerRole])
+      dead.removeRole(deadRole)
     })
   }
-
-  */
 
   await BOT.database.setServerData('GLOBAL', 'running_pick', {guildID: 'null', channelID: 'null', messageID: 'null', ends: new Date(new Date(Date.now()).getTime() + 365 * 24 * 60 * 60000)})
   await BOT.database.setServerData('GLOBAL', 'running_revive_pick', {guildID: 'null', channelID: 'null', messageID: 'null', ends: new Date(new Date(Date.now()).getTime() + 365 * 24 * 60 * 60000)})
